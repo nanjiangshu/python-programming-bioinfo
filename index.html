@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Course</title>
+<style>
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.main-content {
+  padding: 16px;
+  display: none; /* Hide all content initially */
+}
+.main-content h1 {
+  color: #333;
+}
+/* Initially display only the lectures content */
+#lectures {
+  display: block;
+}
+.welcome-message {
+  padding: 16px;
+}
+</style>
+<script>
+// Simple JavaScript function to switch content based on clicked tab
+function showContent(contentId) {
+  // Hide all content
+  document.querySelectorAll('.main-content').forEach(function(content) {
+    content.style.display = 'none';
+  });
+  // Show the content corresponding to clicked tab
+  var activeContent = document.getElementById(contentId);
+  if (activeContent) {
+    activeContent.style.display = 'block';
+  }
+  // Hide the welcome message
+  document.querySelector('.welcome-message').style.display = 'none';
+  // Show the content corresponding to clicked tab
+  var activeContent = document.getElementById(contentId);
+  if (activeContent) {
+    activeContent.style.display = 'block';
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="javascript:void(0);" onclick="showContent('lectures')">Lectures</a>
+  <a href="javascript:void(0);" onclick="showContent('exercises')">Exercises</a>
+  <a href="javascript:void(0);" onclick="showContent('quiz')">Quiz</a>
+  <a href="javascript:void(0);" onclick="showContent('project')">Project</a>
+</div>
+
+<div class="welcome-message">
+  <h1>Welcome to the Python Course</h1>
+  <p>This introductory page will provide you with an overview of the course structure, topics covered, and learning outcomes. Click on the tabs to access the Lectures, Exercises, Quiz, and Project information.</p>
+</div>
+
+<div class="main-content" id="lectures">
+  <h1>Lectures</h1>
+  <ul>
+    <li><a href="slides/day1-slides.pdf">Day 1 - Slides</a></li>
+    <li><a href="slides/day2-slides.pdf">Day 2 - Slides</a></li>
+    <li><a href="slides/day3-slides.pdf">Day 3 - Slides</a></li>
+    <li><a href="slides/day4-slides.pdf">Day 4 - Slides</a></li>
+    <li><a href="slides/day5-slides.pdf">Day 5 - Slides</a></li>
+  </ul>
+</div>
+
+<div class="main-content" id="exercises">
+  <h1>Exercises</h1>
+  <ul>
+    <li><a href="exercises/day1-exercise1.pdf">Day 1 - Exercise 1</a></li>
+    <li><a href="exercises/day1-exercise2.pdf">Day 1 - Exercise 2</a></li>
+    <li><a href="exercises/day1-exercise3.pdf">Day 1 - Exercise 3</a></li>
+    <li><a href="exercises/day1-exercise4.pdf">Day 1 - Exercise 4</a></li>
+  </ul>
+  <!-- Add links for other days -->
+</div>
+
+<div class="main-content" id="quiz">
+  <h1>Quiz</h1>
+  <ul>
+    <li><a href="quiz/day1-quiz.pdf">Day 1 - Quiz</a></li>
+    <li><a href="quiz/day2-quiz.pdf">Day 2 - Quiz</a></li>
+    <li><a href="quiz/day3-quiz.pdf">Day 3 - Quiz</a></li>
+    <li><a href="quiz/day4-quiz.pdf">Day 4 - Quiz</a></li>
+    <li><a href="quiz/day5-quiz.pdf">Day 5 - Quiz</a></li>
+  </ul>
+</div>
+
+<div class="main-content" id="project">
+  <h1>Project</h1>
+  <p>This is the course project page where the project description will be provided. Students can find project requirements, submission guidelines, and evaluation criteria here.</p>
+</div>
+
+</body>
+</html>
