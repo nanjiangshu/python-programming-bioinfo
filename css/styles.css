@@ -1,0 +1,121 @@
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.welcome-message {
+    padding: 16px;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+h1, h2 {
+    color: #333;
+}
+p {
+    margin: 10px 0;
+}
+a {
+    color: #1a73e8;
+}
+code {
+    background-color: #f8f8f8;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+.tip {
+    background-color: #e7f3fe;
+    border-left: 4px solid #2196f3;
+    padding: 10px;
+    margin: 10px 0;
+}
+.answer {
+    background-color: #f1f1f1;
+    border-left: 4px solid #4caf50;
+    padding: 10px;
+    margin: 10px 0;
+}
+.filetable {
+    width: 100%;
+    border-collapse: collapse;
+}
+.filetable th, .filetable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.filetable th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+.toggle-btn {
+    cursor: pointer;
+    user-select: none;
+}
+.arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
+.expanded .arrow {
+    transform: rotate(-135deg);
+}
+
+
+/*... previous styles ...*/
+
+/* Style for 'Answer' and 'Tip' buttons and content */
+.toggle-btn {
+    cursor: pointer;
+    user-select: none;
+    color: #1a73e8; /* Makes it look clickable */
+    padding-left: 40px;
+}
+
+/* Hide the sections by default */
+.answer-content {
+    display: none;
+    background-color: #f1f1f1;
+    border-left: 4px solid #4caf50;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px 0;
+    margin-left: 40px;
+}
+.tip-content {
+    display: none;
+    background-color: #e7f3fe;
+    border-left: 4px solid #2196f3;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px 0;
+    margin-left: 40px;
+}
+
+/* Optional styles for when content is visible */
+.expanded .arrow {
+    transform: rotate(-135deg);
+}
