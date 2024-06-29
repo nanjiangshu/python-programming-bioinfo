@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Python Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="lectures.html">Lectures</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="project.html">Project</a>
+</div>
+
+<!-- project content goes here -->
+    <h1>Introduction</h1>
+    <p>After the lectures and mini exercises, you will have the opportunity to work on a project for some hours every day. The project aims to allow you to think more freely using the knowledge you acquired, along with the tools we have been going through during the lectures. The project is a simple example of a problem you could face during your own research and it is meant to prepare you to use Python to solve such kind of problems.</p>
+    <p>Please note that the project is not mandatory and finishing the course does not depend on its completion. However, we highly recommend that you try to solve the tasks and encourage you to ask questions if something is unclear. Given that many of you might not have the time to complete the project during the course hours, we will be expecting questions regarding the project the week after the course completion.</p>
+    <p>The presentation can be found <a href="#">here</a>.</p>
+
+    <h2>Background</h2>
+    <p>For many diseases with known causative mutations, screening methods have been developed to detect whether people have a high risk of becoming sick, even before the onset of the actual disease. Over the last few years, the cost of full genome sequencing has gone down so that, in some cases, it might be cheaper to collect the complete genome sequence of patients with a high risk of carrying variants associated with the disease, rather than using targeted screening procedures.</p>
+    <p>Cystic fibrosis is a complex disease, where patients often manifest the following symptoms: problems with lung functions, diabetes and infertility. From a genetic point of view, there are several mutations associated with this disease. The gene CFTR (short for Cystic Fibrosis Transmembrane Conductance Regulator) encodes an ion channel protein acting in epithelial cells and is encoded on chromosome 7 of the human genome. CFTR carries several non-synonymous genetic variants, some of which leading to premature stop codons that are known to cause the disease.</p>
+
+    <h2>Goal</h2>
+    <p>In this assignment, you have access to the human reference genome (chromosome 7) as well as the full genome annotation. In addition, you have genome sequence data of chromosome 7 from five individuals from a family at risk of carrying mutations related to the disease.</p>
+    <p>Your task is to write a Python program that:</p>
+    <ol>
+        <li>extracts a disease-causing transcript from the CFTR gene,</li>
+        <li>translates the gene sequence to its corresponding amino-acid sequence, and</li>
+        <li>based on the reference amino-acid sequence determine whether any of the five given individuals is affected.</li>
+    </ol>
+
+    <h2>Required Material</h2>
+    <p>The main task is divided into several steps. The first step is to download the reference sequence file and the appropriate reference annotation file from the Ensembl database:</p>
+    <ul>
+        <li>Human reference DNA for chromosome 7 (fasta format): <a href="#">Homo_sapiens.GRCh38.dna_sm.chromosome.7.fa.gz</a></li>
+        <li>Human reference annotation file (GTF format): <a href="#">Homo_sapiens.GRCh38.93.gtf.gz</a></li>
+    </ul>
+    <p>If you are not familiar with the file formats, read up online on how the files are structured. For example, <a href="#">here</a> you can find a short description of the different (tab-delimited) fields of a GTF file and <a href="#">here</a> a general description about the fasta files.</p>
+    <p>Some of the tasks involve outputting long sequences. To make sure they are correct, use the <code>utils.check_answers</code> package (from the downloads folder). You can import it that way:</p>
+    <pre><code>from utils import check_answers</code></pre>
+    <p>More detailed instructions are given with each task that uses the package.</p>
+
+    <h2>Warm-up</h2>
+    <p>We recommend creating a folder in your file system, called Project. In this folder you can add all the required files, such as the reference and annotation files, as well as the downloaded folder from the previous step.</p>
+    <ol>
+        <li>Unzip the reference DNA and annotation files (fasta and GTF respectively), so that you can check their contents. That should be possible using 7zip in Windows and double clicking the files in MacOS and Linux.</li>
+        <li>Now that the files are decompressed, you can check their content using the head command on your terminal. You can google the <code>head</code> command for details or type <code>head --help</code> to see the usage instructions. You can check the first two lines of each file using the head command.</li>
+    </ol>
+
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>Run <code>head -n 2</code> to see the first two lines</p>
+    </div>
+
+    <ol start="3">
+        <li>What is the length of chromosome 7 on the reference sequence?</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Open the reference fasta file and read it line by line. In a loop, ignore the first line and get the length of each following line. Don’t forget to remove the trailing newline character from each line. Sum up all the lengths you found.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>Chromosome 7 has 159,345,973 base pairs.</p>
+    </div>
+
+    <ol start="4">
+        <li>How many genes are annotated in the GTF file?</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>You need to understand the structure of a GTF (gene transfer format) file for this project. Take your time and read up on the file format if you are not sure how to solve this task. To get the number of genes, open the GTF file and read it line by line. In a loop, count all features of type gene.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>There are 58,395 genes annotated in the GTF file.</p>
+    </div>
+
+    <h2>Architect a Method</h2>
+    <p>All following tasks are related to the CFTR gene.</p>
+    <p>In the annotation file (the GTF file), the CFTR gene has the id ENSG00000001626 on chromosome 7.</p>
+    <ol>
+        <li>How many transcripts can the CFTR gene generate?</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Again, think about the structure of the GTF file. Open the GTF file. In a loop, count all transcript features for the gene.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>The CFTR gene can produce 11 different transcripts.</p>
+    </div>
+
+    <ol start="2">
+        <li>Which of these transcripts is the longest transcript in nucleotides?</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Open the GTF file. Fetch the start and stop positions for each transcript of the CFTR gene to calculate its length. Keep in mind that sequence numbering starts at 1 in the GTF file format.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>The transcript with the id ENST00000003084 is the longest of 11 transcripts and spans 188,703 bases.</p>
+    </div>
+
+    <ol start="3">
+        <li>Fetch the DNA sequence for that transcript.</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Open the reference fasta file. In a loop, ignore the first line and append each line to a list, removing the trailing newline character. Outside the loop, use the join function to concatenate the lines from the list to get the reference sequence. Avoid concatenation inside the loop, as it is slow and wastes memory. Extract the start and stop positions of the longest transcript to fetch its DNA sequence from the reference sequence, but think about where the index starts from.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>Write your results to a file and compare it to the correct result using <code>check_answers.ex3("resultsFile.txt")</code>. The entire sequence can also be found <a href="#">here</a>.</p>
+    </div>
+
+    <ol start="4">
+        <li>Fetch the DNA sequences of all exons for that transcript, spliced together to one sequence.</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>First, you need to save the start and stop positions of all exons of the longest transcript. Then you can use a similar loop to the one you used in task 3 to extract the DNA sequence of each exon. Finally, you need to concatenate the DNA sequences of all exons.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>Write your results to a file and compare it to the correct result using <code>check_answers.ex4("resultsFile.txt")</code>. The correct sequence can also be found <a href="#">here</a>.</p>
+    </div>
+
+    <ol start="5">
+        <li>What are the start positions and sequences of the start_codon and stop_codon for that transcript?</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Find the start_codon and stop_codon features of the longest transcript in the GTF file, including the start positions of the start- and stop-codon. Check that the start_codon has the sequence ATG, and that the stop_codon corresponds to a proper stop codon. Make your program print a warning message in case the transcript does not begin with a start-codon and end with a stop-codon.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>The start codon has the sequence ATG and starts at position 117,480,095.</p>
+        <p>The stop codon has the sequence TAG and starts at position 117,667,106.</p>
+    </div>
+
+    <ol start="6">
+        <li>Translate the above sequence of all exons into amino acids, using an implementation of the translation table from the <code>utils.rna</code> package (included in the downloads folder).</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Translate the DNA sequence of the concatenated exons into amino acids from the start codon position of the transcript on.</p>
+    </div>
+    <div class="answer">
+        <p><strong>Answer:</strong></p>
+        <p>Write your results to a file and compare it to the correct result using <code>check_answers.ex6("resultsFile.txt")</code>. The correct sequence can also be found <a href="#">here</a>.</p>
+    </div>
+
+    <h2>Find the Patients at Risk</h2>
+    <p>We are reaching the goal for this assignment!</p>
+    <p>A mutation in the transcript ENST00000003084 causes a premature stop codon to be introduced into the amino acid sequence. This creates a truncated protein, causing cystic fibrosis. Use the python code you have written to solve the tasks above and extend it to compare the reference genome sequence of chromosome 7 to the sequences of the following 5 patients in fasta format (Patient1.fa.gz, Patient2.fa.gz, Patient3.fa.gz, Patient4.fa.gz, and Patient5.fa.gz) to determine which of them are carrying a mutation in the CFTR gene that causes a truncated protein.</p>
+
+    <h2>Extra Task</h2>
+    <ol>
+        <li>Use BioPython to parse the fasta file and to translate DNA nucleotides into amino acids.</li>
+    </ol>
+    <div class="tip">
+        <p><strong>Tip:</strong></p>
+        <p>Check the BioPython tutorial on how to parse a fasta file with BioPython. Read up on the built-in translation method and the BioPython translation tables.</p>
+    </div>
+
+
+
+</body>
+</html>
