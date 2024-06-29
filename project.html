@@ -18,12 +18,17 @@
 
 <!-- project content goes here -->
     <h1>Introduction</h1>
-    <p>After the lectures and mini exercises, you will have the opportunity to work on a project for some hours every day. The project aims to allow you to think more freely using the knowledge you acquired, along with the tools we have been going through during the lectures. The project is a simple example of a problem you could face during your own research and it is meant to prepare you to use Python to solve such kind of problems.</p>
-    <p>Please note that the project is not mandatory and finishing the course does not depend on its completion. However, we highly recommend that you try to solve the tasks and encourage you to ask questions if something is unclear. Given that many of you might not have the time to complete the project during the course hours, we will be expecting questions regarding the project the week after the course completion.</p>
-    <p>The presentation can be found <a href="#">here</a>.</p>
+
+    <p>After the lectures and exercises, you will have the opportunity to work on a course project. The project is designed to allow you to think more freely using the knowledge you have acquired, along with the tools we have covered during the lectures. It is a simple example of a problem you might encounter during your own research and is intended to prepare you to use Python to solve such problems.</p>
+
+    <p>Please note that the project is not mandatory, and completing the course does not depend on its completion. However, we highly recommend that you attempt to solve the tasks and encourage you to ask questions if something is unclear. Since some of you might not have the time to complete the project during the course hours, we will be expecting questions regarding the project during the week following the course completion. </p>
+
+    <p>The presentation can be found in the <a href="lectures/Day_2.slides.embedded.html" target="_blank">lecture for Day 2</a>.</p>
+
 
     <h2>Background</h2>
     <p>For many diseases with known causative mutations, screening methods have been developed to detect whether people have a high risk of becoming sick, even before the onset of the actual disease. Over the last few years, the cost of full genome sequencing has gone down so that, in some cases, it might be cheaper to collect the complete genome sequence of patients with a high risk of carrying variants associated with the disease, rather than using targeted screening procedures.</p>
+
     <p>Cystic fibrosis is a complex disease, where patients often manifest the following symptoms: problems with lung functions, diabetes and infertility. From a genetic point of view, there are several mutations associated with this disease. The gene CFTR (short for Cystic Fibrosis Transmembrane Conductance Regulator) encodes an ion channel protein acting in epithelial cells and is encoded on chromosome 7 of the human genome. CFTR carries several non-synonymous genetic variants, some of which leading to premature stop codons that are known to cause the disease.</p>
 
     <h2>Goal</h2>
@@ -36,21 +41,58 @@
     </ol>
 
     <h2>Required Material</h2>
-    <p>The main task is divided into several steps. The first step is to download the reference sequence file and the appropriate reference annotation file from the Ensembl database:</p>
-    <ul>
-        <li>Human reference DNA for chromosome 7 (fasta format): <a href="#">Homo_sapiens.GRCh38.dna_sm.chromosome.7.fa.gz</a></li>
-        <li>Human reference annotation file (GTF format): <a href="#">Homo_sapiens.GRCh38.93.gtf.gz</a></li>
-    </ul>
-    <p>If you are not familiar with the file formats, read up online on how the files are structured. For example, <a href="#">here</a> you can find a short description of the different (tab-delimited) fields of a GTF file and <a href="#">here</a> a general description about the fasta files.</p>
-    <p>Some of the tasks involve outputting long sequences. To make sure they are correct, use the <code>utils.check_answers</code> package (from the downloads folder). You can import it that way:</p>
+    <p>The main task is divided into several steps. The first step is to download the <a href="assignment/data.zip">data.zip</a> which includes
+    <table class="filetable">
+        <tr>
+            <th>Filename</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Homo_sapiens.GRCh38.93.gtf.gz</td>
+            <td>Human reference annotation file (GTF format)</td>
+        </tr>
+        <tr>
+            <td>Homo_sapiens.GRCh38.dna_sm.chromosome.7.fa.gz</td>
+            <td>Human reference DNA sequence for chromosome 7 (fasta format)</td>
+        </tr>
+        <tr>
+            <td>Patient1.fa.gz</td>
+            <td>DNA sequence data for Patient 1 (fasta format)</td>
+        </tr>
+        <tr>
+            <td>Patient2.fa.gz</td>
+            <td>DNA sequence data for Patient 2 (fasta format)</td>
+        </tr>
+        <tr>
+            <td>Patient3.fa.gz</td>
+            <td>DNA sequence data for Patient 3 (fasta format)</td>
+        </tr>
+        <tr>
+            <td>Patient4.fa.gz</td>
+            <td>DNA sequence data for Patient 4 (fasta format)</td>
+        </tr>
+        <tr>
+            <td>Patient5.fa.gz</td>
+            <td>DNA sequence data for Patient 5 (fasta format)</td>
+        </tr>
+        <tr>
+            <td>gtf-format.md</td>
+            <td>Markdown file explaining the GTF format</td>
+        </tr>
+    </table>
+
+
+
+    <p>If you are not familiar with the file formats, read up online on how the files are structured. For example, <a href="assignment/data/gtf-format.md" target="_blank">here</a> you can find a short description of the different (tab-delimited) fields of a GTF file and <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp" target="_blank">here</a> a general description about the fasta files.</p>
+    <p>Some of the tasks involve outputting long sequences. To make sure they are correct, use the <code>utils.check_answers</code> package (from the <a href="downloads" target="_blank">downloads folder</a>). You can import it that way:</p>
     <pre><code>from utils import check_answers</code></pre>
     <p>More detailed instructions are given with each task that uses the package.</p>
 
     <h2>Warm-up</h2>
-    <p>We recommend creating a folder in your file system, called Project. In this folder you can add all the required files, such as the reference and annotation files, as well as the downloaded folder from the previous step.</p>
+    <p>We recommend creating a folder in your file system, called <b>project</b>. In this folder you can add all the required files, such as the reference and annotation files, as well as the downloaded folder from the previous step.</p>
     <ol>
         <li>Unzip the reference DNA and annotation files (fasta and GTF respectively), so that you can check their contents. That should be possible using 7zip in Windows and double clicking the files in MacOS and Linux.</li>
-        <li>Now that the files are decompressed, you can check their content using the head command on your terminal. You can google the <code>head</code> command for details or type <code>head --help</code> to see the usage instructions. You can check the first two lines of each file using the head command.</li>
+        <li>Now that the files are decompressed, you can check their content using the <code>head</code> command on your terminal. You can search online how to use the <code>head</code> command or type <code>head --help</code> to see the usage instructions. You can check the first two lines of each file using the <code>head</code> command.</li>
     </ol>
 
     <div class="answer">
