@@ -5,6 +5,9 @@ Usage: Input filename of sequence to compare against correct reference sequence.
 
 import urllib.request
 
+# URL_RESULTS = "https://python-bioinfo.bioshu.se/assignment/results"
+URL_RESULTS = "https://pcons1.scilifelab.se/misc/download/python-bioinfo/assignment/results"
+
 def compare(infile, correctFile):
     url      = correctFile
     response = urllib.request.urlopen(url)
@@ -41,18 +44,18 @@ def ex3(infile):
   """
    Usage: Input filename of output from exercise 3
   """
-  compare(infile, 'https://raw.githubusercontent.com/NBISweden/PythonCourse/ht19/assignment/results/transcript.ncbi.fasta')
+  compare(infile, f'{URL_RESULTS}/transcript.ncbi.fasta')
 
 
 def ex4(infile):
   """
    Usage: Input filename of output from exercise 4
   """
-  compare(infile, 'https://raw.githubusercontent.com/NBISweden/PythonCourse/ht19/assignment/results/mrna.ncbi.fasta')
+  compare(infile, f'{URL_RESULTS}/mrna.ncbi.fasta')
 
 
 def ex6(infile):
   """
    Usage: Input filename of output from exercise 6
   """
-  compare(infile, 'https://raw.githubusercontent.com/NBISweden/PythonCourse/ht19/assignment/results/protein.ncbi.fasta')
+  compare(infile, f'{URL_RESULTS}/protein.ncbi.fasta')

@@ -5,6 +5,8 @@ from utils import check_answers
 from pprint import pprint
 import re
 
+DATA_PATH = "./uncompressed-data"
+
 def parse_gtf(lines):
     '''
     Parses lines from a GTF file and returns a list of dictionaries
@@ -52,7 +54,7 @@ example_line = '1\thavana\tgene\t11869\t14409\t.\t+\t.\tgene_id "ENSG00000223972
 CFTR_gene_id = 'ENSG00000001626'
 CFTR_lines = []
 
-fh = open('./data/Homo_sapiens.GRCh38.93.gtf', 'r')
+fh = open(f'{DATA_PATH}/Homo_sapiens.GRCh38.93.gtf', 'r')
 for line in fh:
     if CFTR_gene_id in line:
         CFTR_lines.append(line)
@@ -122,7 +124,7 @@ def fasta_subsequences(filename, start_end_list):
         out += seq[start - 1: end]
     return out
 
-c7_filename = './data/Homo_sapiens.GRCh38.dna_sm.chromosome.7.fa'
+c7_filename = f'{DATA_PATH}/Homo_sapiens.GRCh38.dna_sm.chromosome.7.fa'
 
 longest_seq = fasta_subsequence(c7_filename, longest_row['start'], longest_row['end'])
 print(f'''
@@ -196,11 +198,11 @@ fh.close()
 check_answers.ex6('protein.txt')
 
 files = [
-    './data/Patient1.fa',
-    './data/Patient2.fa',
-    './data/Patient3.fa',
-    './data/Patient4.fa',
-    './data/Patient5.fa',
+    f'{DATA_PATH}/Patient1.fa',
+    f'{DATA_PATH}/Patient2.fa',
+    f'{DATA_PATH}/Patient3.fa',
+    f'{DATA_PATH}/Patient4.fa',
+    f'{DATA_PATH}/Patient5.fa',
 ]
 
 print('=== FINAL REPORT ===')
