@@ -1,109 +1,32 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 
-zero= ["  ***  ",
-       " *   * ",
-       "*     *",
-       "*     *",
-       "*     *",
-       " *   * ",
-       "  ***  " ]
+import sys
+import importlib
 
-one=  ["   *   ",
-       "  **   ",
-       " * *   ",
-       "   *   ",
-       "   *   ",
-       "   *   ",
-       "  ***  " ]
+def check_package(package_name):
+    try:
+        return importlib.import_module(package_name)
+    except ImportError:
+        return None
 
-two=  ["  ***  ",
-       " *   * ",
-       " *   * ",
-       "    *  ",
-       "   *   ",
-       "  *    ",
-       " ***** " ]
+# List of packages to check, with their import names
+packages = {
+    'python': sys.version_info,
+    'pandas': 'pandas',
+    'matplotlib': 'matplotlib',
+    'biopython': 'Bio',
+    'jupyter': 'notebook',
+}
 
-three=["  ***  ",
-       " *   * ",
-       "    *  ",
-       "   *   ",
-       "    *  ",
-       " *   * ",
-       "  ***  " ]
-
-four= ["    *  ",
-       "   **  ",
-       "  * *  ",
-       " ****  ",
-       "    *  ",
-       "    *  ",
-       "    *  " ]
-
-five= [" ***** ",
-       " *     ",
-       " *     ",
-       " ***** ",
-       "     * ",
-       "     * ",
-       " ***** " ]
-
-six=  [" ***** ",
-       " *     ",
-       " *     ",
-       " ***** ",
-       " *   * ",
-       " *   * ",
-       " ***** " ]
-
-seven=[" ***** ",
-       "     * ",
-       "     * ",
-       "    *  ",
-       "   *   ",
-       "  *    ",
-       " *     " ]
-
-eight=[" ***** ",
-       " *   * ",
-       " *   * ",
-       " ***** ",
-       " *   * ",
-       " *   * ",
-       " ***** " ]
-
-nine= [" ***** ",
-       " *   * ",
-       " *   * ",
-       " ***** ",
-       "     * ",
-       "     * ",
-       " ***** " ]
-
-digits = [zero,one,two,three,four,five,six,seven,eight,nine] # nested lists
-
-colon=["", "", "", "*", "", "*", "" ]
-
-
-from time import localtime as get_time
-
-now = get_time()
-
-h1 = now.tm_hour // 10 # floor division
-h2 = now.tm_hour % 10
-m1 = now.tm_min // 10 # floor division
-m2 = now.tm_min % 10
-
-
-width = '=' * len(zero)
-print( '{}'.format(width * 5) )
-
-for i in range(len(colon)):
-    print( '{}{}{:^6}{}{}'.format(digits[h1][i],
-                                  digits[h2][i],
-                                  colon[i],
-                                  digits[m1][i],
-                                  digits[m2][i])) 
-
-print( '{}'.format(width * 5) )
+for package, import_name in packages.items():
+    if package == 'python':
+        print(f"Python version: {'.'.join(map(str, import_name[:3]))}")
+    else:
+        pkg = check_package(import_name)
+        if pkg:
+            if hasattr(pkg, '__version__'):
+                print(f"{package} version: {pkg.__version__}")
+            else:
+                print(f"{package} is installed, but version cannot be determined.")
+        else:
+            print(f"{package} is NOT installed.")
