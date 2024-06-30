@@ -50,6 +50,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14495,6 +14496,9 @@ a.anchor-link {
 .reveal {
   font-size: 160%;
 }
+.reveal table {
+  font-size: var(--jp-ui-font-size1);
+}
 .reveal pre {
   width: inherit;
   padding: 0.4em;
@@ -14538,6 +14542,23 @@ div.jp-OutputPrompt {
   margin: 5px 5px 0 0;
 }
 
+.reveal div.highlight {
+  margin: 0;
+}
+
+.reveal div.highlight > pre {
+  margin: 0;
+  width: 100%;
+  font-size: var(--jp-code-font-size);
+}
+
+.reveal div.jp-OutputArea-output > pre {
+  margin: 0;
+  width: 90%;
+  font-size: var(--jp-code-font-size);
+  box-shadow: none;
+}
+
 /* Reveal navigation controls */
 
 .reveal .controls .navigate-left,
@@ -14578,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14615,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14641,8 +14659,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Introduction-to">Introduction to<a class="anchor-link" href="#Introduction-to">&#182;</a></h2><p><img src="img/python-logo-master-flat.png" alt="title"></p>
-<h3 id="with-Application-to-Bioinformatics">with Application to Bioinformatics<a class="anchor-link" href="#with-Application-to-Bioinformatics">&#182;</a></h3><h4 id="--Day-2">- Day 2<a class="anchor-link" href="#--Day-2">&#182;</a></h4>
+<p><img src="img/python-logo-master-flat.png" alt="Python Logo" style="width: 120px; float: right; margin: 0 0 10px 10px;" /></p>
+<h2 id="Introduction-to-Python-with-Application-in-Bioinformatics">Introduction to Python with Application in Bioinformatics<a class="anchor-link" href="#Introduction-to-Python-with-Application-in-Bioinformatics">&#182;</a></h2><h3 id="Nanjiang-Shu">Nanjiang Shu<a class="anchor-link" href="#Nanjiang-Shu">&#182;</a></h3><h4 id="2024-07-16-(Day-2)">2024-07-16 (Day 2)<a class="anchor-link" href="#2024-07-16-(Day-2)">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14653,9 +14671,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Review-Day-1">Review Day 1<a class="anchor-link" href="#Review-Day-1">&#182;</a></h2><p>Go to Canvas, <code>Modules -&gt; Day 2 -&gt; Review Day 1</code></p>
-<p>~30 minutes</p>
-
+<h2 id="Review-of-Day-1">Review of Day 1<a class="anchor-link" href="#Review-of-Day-1">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14811,7 +14827,7 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">]</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 
@@ -15049,8 +15065,8 @@ Lists and strings</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;a random string&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">'a random string'</span>
 
 <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">a</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
@@ -15108,10 +15124,10 @@ Lists and strings</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>         <span class="c1"># mutable</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>       <span class="c1"># mutable</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;a random string&#39;</span>   <span class="c1"># immutable</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">]</span>       <span class="c1"># mutable</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">'a random string'</span>   <span class="c1"># immutable</span>
 
-<span class="c1">#c[0] = &#39;A&#39;</span>
+<span class="c1">#c[0] = 'A'</span>
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">a</span>
 </pre></div>
@@ -15170,7 +15186,7 @@ Lists and strings</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myTuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,[</span><span class="mi">42</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">44</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myTuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,[</span><span class="mi">42</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">44</span><span class="p">])</span>
 <span class="c1">#myTuple[0] = 42</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">myTuple</span><span class="p">)</span>
 <span class="c1">#print(len(myTuple))</span>
@@ -15239,9 +15255,9 @@ c
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="k">if</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; is found in the list b&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="s1">' is found in the list b'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; is not in the list&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="s1">' is not in the list'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15303,7 +15319,7 @@ c
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../files/somerandomfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../files/somerandomfile.txt'</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -15405,8 +15421,24 @@ nonsense lines
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Day-2">Day 2<a class="anchor-link" href="#Day-2">&#182;</a></h2><ul>
-<li>Pseudocode</li>
-<li>Functions vs Methods</li>
+<li>Session 1:<ul>
+<li>Python Script: Dump your code into a script.</li>
+<li>File I/O: Read from and write to files.</li>
+</ul>
+</li>
+<li>Session 2:<ul>
+<li>Live coding with problem solving.</li>
+</ul>
+</li>
+<li>Session 3: (after lunch)<ul>
+<li>Functions and Methods.</li>
+</ul>
+</li>
+<li>Session 4:<ul>
+<li>Introduction to the Course Project (after lunch).</li>
+<li>Project time</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -15419,8 +15451,87 @@ nonsense lines
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="How-to-approach-a-coding-task">How to approach a coding task<a class="anchor-link" href="#How-to-approach-a-coding-task">&#182;</a></h2><p>Problem:<br>
-You have a VCF file with a larger number of samples. You are interested in only one of the samples (sample1) and one region (chr5, 1.000.000-1.005.000). What you want to know is whether this sample has any variants in this region, and if so, what variants.</p>
+<h2 id="Session-1:-Python-script,-File-I/O">Session 1: Python script, File I/O<a class="anchor-link" href="#Session-1:-Python-script,-File-I/O">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Python-script">Python script<a class="anchor-link" href="#Python-script">&#182;</a></h2><p>A Python script is a file containing Python code that can be executed all at once.</p>
+<ul>
+<li>File Extension: <code>.py</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gene_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"TP53"</span><span class="p">,</span> <span class="s2">"COX2"</span><span class="p">,</span> <span class="s2">"EGFR"</span><span class="p">,</span> <span class="s2">"MTOR"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">gene_id</span> <span class="ow">in</span> <span class="n">gene_ids</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">gene_id</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>TP53
+COX2
+EGFR
+MTOR
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="5-mins-exercise">5 mins exercise<a class="anchor-link" href="#5-mins-exercise">&#182;</a></h2><p>Put some of your Python code you have written yesterday and save it in a Python script, run it in a terminal with either</p>
+<div class="highlight"><pre><span></span>python<span class="w"> </span>yourscript.py
+</pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span>./yourscript.py
+</pre></div>
+<ul>
+<li>Replace <code>yourscript.py</code> with the actual name you use</li>
+<li>You need to add <code>#!/usr/bin/env python</code> at the beginning of the script and also make the script executable in order to run by the second method </li>
+</ul>
 
 </div>
 </div>
@@ -15432,8 +15543,397 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Always-write-pseudocode!">Always write pseudocode!<a class="anchor-link" href="#Always-write-pseudocode!">&#182;</a></h2><p><br></br></p>
-<p>Pseudocode is a description of what you want to do without actually using proper syntax</p>
+<h2 id="More-useful-script">More useful script<a class="anchor-link" href="#More-useful-script">&#182;</a></h2><p>calculate_gc_content.py inputfile</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">We</span> <span class="n">will</span> <span class="n">describe</span> <span class="n">it</span> <span class="n">tomorrow</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="File-I/O---read-from-file-and-write-to-file">File I/O - read from file and write to file<a class="anchor-link" href="#File-I/O---read-from-file-and-write-to-file">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Read-from-file">Read from file<a class="anchor-link" href="#Read-from-file">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;filename.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>I have a file contains DNA sequences and want to use Python to read its content and then calculate the number of nucleotides, that is, get the length of the dna sequence.</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seqfile</span> <span class="o">=</span> <span class="s2">"../files/one_dna_sequence.fa"</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">seqfile</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&gt;SEQUENCE_1
+
+AGCTTAGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGC
+
+TTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTA
+
+GCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCT
+
+AGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTT
+
+AGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGC
+
+TAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAA
+
+GCTTAGCTAGCTAGCTAGCTTAGCTA
+
+
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Detour:-useful-methods-for-string">Detour: useful methods for <code>string</code><a class="anchor-link" href="#Detour:-useful-methods-for-string">&#182;</a></h3><p><code>'string'.strip()</code> &emsp; &emsp; &emsp; Removes whitespace<br>
+<code>'string'.split()</code> &emsp; &emsp; &emsp; Splits on whitespace into list</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">string1</span>  <span class="o">=</span> <span class="s1">'  an example string with whitespaces at both ends   '</span>
+<span class="n">string2</span> <span class="o">=</span> <span class="n">string1</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">string2</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;an example string with whitespaces at both ends&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="n">string2</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">list1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;an&#39;, &#39;example&#39;, &#39;string&#39;, &#39;with&#39;, &#39;whitespaces&#39;, &#39;at&#39;, &#39;both&#39;, &#39;ends&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="n">string1</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">list2</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;an&#39;, &#39;example&#39;, &#39;string&#39;, &#39;with&#39;, &#39;whitespaces&#39;, &#39;at&#39;, &#39;both&#39;, &#39;ends&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Write-to-file">Write to file<a class="anchor-link" href="#Write-to-file">&#182;</a></h3><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, Python!&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, Python!&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, Python!&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">seqfile</span> <span class="o">=</span> <span class="s2">"../files/one_dna_sequence.fa"</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">seqfile</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">seqlength</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"&gt;"</span><span class="p">):</span>
+            <span class="n">seqlength</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="n">outfile</span> <span class="o">=</span> <span class="s2">"../files/output/length_of_dna_sequence.txt"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Length of DNA sequence:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_count</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Day-2,--Exercise-1">Day 2,  Exercise 1<a class="anchor-link" href="#Day-2,--Exercise-1">&#182;</a></h3><ul>
+<li>Taka a break after the exercise</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Session-2:-Live-coding-with-problem-solving">Session 2: Live coding with problem solving<a class="anchor-link" href="#Session-2:-Live-coding-with-problem-solving">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="How-to-approach-a-coding-task">How to approach a coding task<a class="anchor-link" href="#How-to-approach-a-coding-task">&#182;</a></h2><p>Problem:<br>
+You have a VCF file with a number of samples. You are interested in only one of the samples (sample1) and one region (chr5, 1,200,000-1,300,000). What you want to know is whether this sample has any variants in this region, and if so, which variants.</p>
 
 </div>
 </div>
@@ -15446,7 +15946,20 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="What-is-your-input?">What is your input?<a class="anchor-link" href="#What-is-your-input?">&#182;</a></h3><p>A VCF file that is iterable</p>
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Start-with-pseudocode!">Start with pseudocode!<a class="anchor-link" href="#Start-with-pseudocode!">&#182;</a></h2><p><br></br></p>
+<p>Pseudocode is a description of what you want to do without actually using proper syntax</p>
 
 </div>
 </div>
@@ -15459,8 +15972,8 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Basic-Pseudocode:">Basic Pseudocode:<a class="anchor-link" href="#Basic-Pseudocode:">&#182;</a></h4><ul>
-<li>Open file and loop over lines (ignore lines with #)</li>
-<li>Identify lines where chromosome is 5 and position is between 1.000.000 and 1.005.000</li>
+<li>Open the file and loop over lines (ignore lines with started with <code>#</code>)</li>
+<li>Identify lines where chromosome is equal to <code>5</code> and position is between 1,000,000 and 1,005,000</li>
 <li>Isolate the column that contains the genotype for sample1</li>
 <li>Extract the genotypes only from the column</li>
 <li>Check if the genotype contains any alternate alleles</li>
@@ -15477,7 +15990,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 
 </div>
 </div>
@@ -15489,7 +16002,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>- Open file and loop over lines (ignore lines starting with #)</strong></p>
+<p><strong>- Open the file and loop over lines (ignore lines starting with #), and print the first record</strong></p>
 
 </div>
 </div>
@@ -15499,15 +16012,15 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>  
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-        <span class="k">break</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">break</span>
 <span class="c1"># Next, find chromosome 5</span>
 </pre></div>
 
@@ -15530,7 +16043,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1	10492	.	C	T	550.31	LOW_VQSLOD	AN=26;AC=2	GT:AD:DP:GQ:PGT:PID:PL	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	0/1:12,7:19:99:0|1:10403_ACCCTAACCCTAACCCTAACCCTAACCCTAACCCTAAC_A:196,0,340	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.	0/1:18,4:22:48:.:.:48,0,504	./.:0,0:0:.:.:.:.	./.:0,0:0:.:.:.:.
+<pre>1	762969	rs115616822	G	A	.	PASS	AA=g;AC=1;AN=120;DP=226;GP=1:773106;BN=132	GT:DP:CB	0/0:1:SMB	0/0:6:SMB	0/0:3:SMB	0/0:5:SMB	0/0:15:SMB	0/0:6:SMB	0/0:4:SMB	0/0:1:SMB	0/0:11:SMB	0/0:0:SMB	0/0:3:SMB	0/0:3:SMB	0/0:5:SMB	0/0:2:SMB	0/0:8:SMB	0/0:2:SMB	0/0:4:SMB	0/0:2:SMB	0/0:4:SMB	0/0:1:SMB	0/0:6:SMB	0/0:3:SMB	0/0:6:SMB	0/0:1:SMB	0/0:2:SMB	0/0:6:SMB	0/0:7:SMB	0/0:0:SMB	0/0:0:SMB	0/0:3:SMB	0/0:4:SMB	0/0:3:SMB	0/0:2:SB	0/0:6:SMB	0/0:6:SMB	0/0:1:SMB	0/0:1:SMB	0/0:0:SMB	0/0:8:SMB	0/0:7:SMB	0/0:0:SMB	0/0:1:SMB	0/0:3:SMB	0/0:0:SMB	0/0:8:SMB	0/0:5:SMB	0/0:4:SMB	0/0:0:SMB	0/0:8:SMB	0/0:0:SMB	0/0:4:SMB	0/0:5:SMB	0/0:7:SMB	0/0:4:SMB	0/0:2:SMB	0/0:0:SMB	0/0:2:SMB	0/0:2:SMB	0/0:5:SMB	0/1:8:SMB
 </pre>
 </div>
 </div>
@@ -15546,7 +16059,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>- Identify lines where chromosome is 5 and position is between 1.000.000 and 1.005.000</strong></p>
+<p><strong>- Identify lines where chromosome is 5 and position is between 1,000,000 and 1,005,000</strong></p>
 
 </div>
 </div>
@@ -15558,7 +16071,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 
 </div>
 </div>
@@ -15568,17 +16081,16 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="k">break</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'5'</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="k">break</span>
 
 <span class="c1"># Next, find the correct region</span>
 </pre></div>
@@ -15602,7 +16114,8 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5
+<pre>5	106565	rs115608877	G	T	.	PASS	AA=.;AC=7;AN=120;DP=91;GP=5:53565;BN=132	GT:DP:CB	1/0:1:SM	1/0:3:SM	0/0:1:SM	0/0:2:SM	0/0:0:S	0/0:0:SM	0/0:0:SM	0/0:1:S	0/0:0:S	0/0:0:S	0/0:2:SM	0/1:1:SM	0/0:3:SM	0/1:0:SM	0/0:2:SM	1/0:1:S	0/0:1:SM	0/0:0:SM	0/0:2:SM	0/0:1:SM	0/0:5:SM	0/0:0:S	0/0:1:SM	0/0:0:S	0/0:1:SM	0/0:1:SM	0/1:1:SM	0/1:1:SM	0/0:2:SM	0/0:3:SM	0/0:2:SM	0/0:8:SM	0/0:0:SM	0/0:7:SM	0/0:4:SM	0/0:0:S	0/0:2:S	0/0:0:SM	0/0:3:SM	0/0:2:SM	0/0:1:SM	0/0:2:SM	0/0:3:S	0/0:0:SM	0/0:3:SM	0/0:1:SM	0/0:0:SM	0/0:0:SM	0/0:3:S	0/0:1:SM	0/0:0:SM	0/0:0:SM	0/0:3:SM	0/0:4:SM	0/0:2:SM	0/0:1:SM	0/0:0:SM	0/0:0:SM	0/0:1:SM	0/0:2:SM
+
 </pre>
 </div>
 </div>
@@ -15618,7 +16131,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1200px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1200px;"/></p>
 
 </div>
 </div>
@@ -15628,18 +16141,18 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span> <span class="ow">and</span> \
-           <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1005000</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
                 <span class="k">break</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="c1"># Next, find the genotypes for sample1</span>
 </pre></div>
 
@@ -15662,7 +16175,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;5&#39;, &#39;1000080&#39;, &#39;.&#39;, &#39;A&#39;, &#39;T&#39;, &#39;2557.1&#39;, &#39;PASS&#39;, &#39;AN=26;AC=2&#39;, &#39;GT:AD:DP:GQ:PL&#39;, &#39;0/1:15,18:33:99:489,0,357&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;0/1:21,19:40:99:481,0,542&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;, &#39;./.:0,0:0:.:.&#39;]
+<pre>[&#39;5&#39;, &#39;1207129&#39;, &#39;rs111580366&#39;, &#39;G&#39;, &#39;A&#39;, &#39;.&#39;, &#39;PASS&#39;, &#39;AA=G;AC=1;AN=120;DP=329;GP=5:1154129;BN=132&#39;, &#39;GT:DP:CB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/1:17:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:8:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:7:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:14:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:7:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:10:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:13:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:8:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:10:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:7:SMB&#39;, &#39;0/0:0:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:12:SMB&#39;, &#39;0/0:8:SMB&#39;, &#39;0/0:15:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:3:SMB&#39;]
 </pre>
 </div>
 </div>
@@ -15690,7 +16203,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 
 </div>
 </div>
@@ -15700,19 +16213,20 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span> <span class="ow">and</span> \
-           <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1005000</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
                 <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">geno</span><span class="p">)</span>
                 <span class="k">break</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                    
 <span class="c1"># Next, extract the genotypes only</span>
 </pre></div>
 
@@ -15735,7 +16249,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0/1:15,18:33:99:489,0,357
+<pre>0/0:4:SMB
 </pre>
 </div>
 </div>
@@ -15773,20 +16287,19 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span> <span class="ow">and</span> \
-           <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1005000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
+                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">geno</span><span class="p">)</span>
                 <span class="k">break</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="c1"># Next, find in which positions sample1 has alternate alleles</span>
 </pre></div>
 
@@ -15809,8 +16322,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;0/1&#39;, &#39;15,18&#39;, &#39;33&#39;, &#39;99&#39;, &#39;489,0,357&#39;]
-0/1
+<pre>0/0
 </pre>
 </div>
 </div>
@@ -15838,7 +16350,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 
 </div>
 </div>
@@ -15848,19 +16360,19 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[75]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span> <span class="ow">and</span> \
-           <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1005000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">geno</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;0/1&#39;</span><span class="p">,</span> <span class="s1">&#39;1/1&#39;</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
+                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">geno</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"0/0"</span><span class="p">]:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">geno</span><span class="p">)</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="c1">#Next, print nicely</span>
 </pre></div>
 
@@ -15883,28 +16395,8 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
-0/1
+<pre>1/1
+1/1
 </pre>
 </div>
 </div>
@@ -15932,7 +16424,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 
 </div>
 </div>
@@ -15942,20 +16434,22 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Users/Nina/Documents/courses/Python_Beginner_Course/genotypes.vcf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span> <span class="ow">and</span> \
-           <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1000000</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">1005000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">geno</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;0/1&#39;</span><span class="p">,</span> <span class="s1">&#39;1/1&#39;</span><span class="p">]:</span>
-                    <span class="n">var</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="o">+</span><span class="s1">&#39; has genotype: &#39;</span><span class="o">+</span><span class="n">geno</span><span class="p">)</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../downloads/genotypes_small.vcf'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
+                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">geno</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"0/0"</span><span class="p">]:</span>
+                    <span class="n">ref</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                    <span class="n">alt</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+                    <span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">chrom</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">pos</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">ref</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">alt</span><span class="si">}</span><span class="s2"> has genotype: </span><span class="si">{</span><span class="n">geno</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15977,28 +16471,8 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5:1000080_A-T has genotype: 0/1
-5:1000156_G-A has genotype: 0/1
-5:1001097_C-A has genotype: 0/1
-5:1001193_C-T has genotype: 0/1
-5:1001245_T-C has genotype: 0/1
-5:1001339_C-T has genotype: 0/1
-5:1001344_G-C has genotype: 0/1
-5:1001683_G-T has genotype: 0/1
-5:1001755_G-A has genotype: 0/1
-5:1002374_G-A has genotype: 0/1
-5:1002382_G-C has genotype: 0/1
-5:1002620_T-C has genotype: 0/1
-5:1002722_G-A has genotype: 0/1
-5:1002819_C-A has genotype: 0/1
-5:1003043_G-T has genotype: 0/1
-5:1003099_C-T has genotype: 0/1
-5:1003135_G-A has genotype: 0/1
-5:1004648_A-G has genotype: 0/1
-5:1004650_A-C has genotype: 0/1
-5:1004665_A-G has genotype: 0/1
-5:1004702_G-T has genotype: 0/1
-5:1004879_T-C has genotype: 0/1
+<pre>5:1235651_C-T has genotype: 1/1
+5:1277795_G-C has genotype: 1/1
 </pre>
 </div>
 </div>
@@ -16014,16 +16488,132 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>&rarr; Exercises Day 2</strong></p>
-<p>3 options:</p>
-<ol>
-<li>&lt;p style="color:green";&gt;Green exercise&lt;/p&gt;</li>
-<li>&lt;p style="color:#FFBF00";&gt;Yellow exercise&lt;/p&gt;</li>
-<li>&lt;p style="color:red";&gt;Red exercise&lt;/p&gt;</li>
-</ol>
-<p>Level of complexity increases with each exercises<br>
-<em>New to programming</em>: Do Green exercise and possibly Yellow exercise<br>
-<em>More experienced</em>: Do Yellow exercise and/or Red exercise</p>
+<h2 id="Day-2,-Exercise-2">Day 2, Exercise 2<a class="anchor-link" href="#Day-2,-Exercise-2">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Short-break-after-exercise">Short break after exercise<a class="anchor-link" href="#Short-break-after-exercise">&#182;</a></h2><h2 id="Quiz">Quiz<a class="anchor-link" href="#Quiz">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Session-3:-Functions-and-Methods">Session 3: Functions and Methods<a class="anchor-link" href="#Session-3:-Functions-and-Methods">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="What-is-a-function">What is a function<a class="anchor-link" href="#What-is-a-function">&#182;</a></h3><ul>
+<li>A function is a block of code that performs a specific task.</li>
+<li>It can take input (parameters) and return output (results).</li>
+<li>Functions help to reuse code and make programs more modular and readable.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello Python"</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s2">"ACCCCTTGAACCCC"</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">max</span><span class="p">([</span><span class="mi">87</span><span class="p">,</span> <span class="mi">131</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">147</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[78]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>147</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="You-can-also-define-your-own-function">You can also define your own function<a class="anchor-link" href="#You-can-also-define-your-own-function">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">):</span>
+    <span class="c1"># Block of code</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
 
 </div>
 </div>
@@ -16035,8 +16625,103 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="More-useful-functions-and-methods">More useful functions and methods<a class="anchor-link" href="#More-useful-functions-and-methods">&#182;</a></h2><p><strong>What is the difference between a <code>function</code> and a <code>method</code>?</strong></p>
-<p>A <code>method</code> always belongs to an object of a specific class, a <code>function</code> does not have to. For example:</p>
+<h3 id="What-is-a-method">What is a method<a class="anchor-link" href="#What-is-a-method">&#182;</a></h3><ul>
+<li>A method is a function that is associated with objects (instances of classes).</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[86]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">"ACCCGGGT"</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[86]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;acccgggt&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[97]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[1, 5, 13, 13, 25]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="What-is-the-difference-between-a-function-and-a-method?">What is the difference between a <code>function</code> and a <code>method</code>?<a class="anchor-link" href="#What-is-the-difference-between-a-function-and-a-method?">&#182;</a></h3><p>A <code>method</code> always belongs to an object of a specific class, a <code>function</code> does not have to. For example:</p>
 <p><code>print('a string')</code> and <code>print(42)</code> both works, even though one is a string and one is an integer</p>
 <p><code>'a string '.strip()</code> works, but <code>[1,2,3,4].strip()</code> does not work. <code>strip()</code> is a method that only works on strings</p>
 
@@ -16060,51 +16745,6 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">len</span><span class="p">(</span><span class="s1">&#39;a string&#39;</span><span class="p">)</span>
-
-<span class="s1">&#39;a string  &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<span class="c1">#[1,2,3].strip() </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;a string&#39;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16112,7 +16752,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h2>
+<h2 id="Introduction-to-some-useful-build-in-functions">Introduction to some useful build-in functions<a class="anchor-link" href="#Introduction-to-some-useful-build-in-functions">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -16157,12 +16797,10 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[121]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
@@ -16215,10 +16853,11 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[113]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sorted</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Functions taking iterables as input</span>
+<span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -16236,68 +16875,13 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[113]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[1, 2, 4, 23, 35, 88]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="From-Python-documentation">From Python documentation<a class="anchor-link" href="#From-Python-documentation">&#182;</a></h3><p><br></br></p>
-<p><img src="img/sum_function.png" alt="Drawing" style="width: 800px;"/></p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="mi">4</span><span class="p">)</span>
-<span class="c1">#help(sum)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>14</pre>
+<pre>153</pre>
 </div>
 
 </div>
@@ -16323,7 +16907,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[127]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.234556</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -16345,7 +16929,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[127]:</div>
 
 
 
@@ -16367,7 +16951,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Methods">Methods<a class="anchor-link" href="#Methods">&#182;</a></h2><h3 id="Useful-operations-on-strings">Useful operations on strings<a class="anchor-link" href="#Useful-operations-on-strings">&#182;</a></h3><p><img src="img/string_methods.png" alt="Drawing" style="width: 600px;"/></p>
+<h2 id="Introduction-to-some-userful-methods">Introduction to some userful methods<a class="anchor-link" href="#Introduction-to-some-userful-methods">&#182;</a></h2><h3 id="Operations-on-strings">Operations on strings<a class="anchor-link" href="#Operations-on-strings">&#182;</a></h3><p><img src="img/string_methods.png" alt="Drawing" style="width: 600px;"/></p>
 
 </div>
 </div>
@@ -16405,7 +16989,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;    spaciousWith5678.com&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;mco&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'    spaciousWith5678.com'</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'mco'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16458,7 +17042,7 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;  split a string into a list &#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">'  split a string into a list '</span>
 <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">maxsplit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -16512,8 +17096,8 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;a string already&#39;</span><span class="p">)</span>
-<span class="c1">#&#39;|&#39;.join([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'|'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'a string already'</span><span class="p">)</span>
+<span class="c1">#'|'.join(['a', 'b', 'c', 'd'])</span>
 </pre></div>
 
      </div>
@@ -16564,11 +17148,10 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;long string&#39;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ng&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="s1">&#39;long string&#39;</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;nt&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'long string'</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'ng'</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16586,7 +17169,48 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[128]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[129]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'long string'</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'nt'</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[129]:</div>
 
 
 
@@ -16622,8 +17246,8 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;LongRandomString&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="s1">&#39;LongRandomString&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'LongRandomString'</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="s1">'LongRandomString'</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16674,19 +17298,12 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[150]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-<span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">c</span>
+<span class="n">a</span>
 </pre></div>
 
      </div>
@@ -16704,13 +17321,13 @@ You have a VCF file with a larger number of samples. You are interested in only 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[150]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[1, 2, 3, 4, 5]</pre>
+<pre>[1, 2, 3, 4, 5, 5, 5, 5, 6]</pre>
 </div>
 
 </div>
@@ -16719,140 +17336,185 @@ You have a VCF file with a larger number of samples. You are interested in only 
 
 </div>
 
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><ul>
-<li>Tuples are immutable sequences of objects</li>
-<li>Always plan your approach before you start coding</li>
-<li>A method always belongs to an object of a specific class, a function does not have to</li>
-<li>The official Python documentation describes the syntax for all built-in functions and methods</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>&rarr; Exercises Day 2</strong></p>
-<p>3 options:</p>
-<ol>
-<li>&lt;p style="color:green";&gt;Green exercise&lt;/p&gt;</li>
-<li>&lt;p style="color:#FFBF00";&gt;Yellow exercise&lt;/p&gt;</li>
-<li>&lt;p style="color:red";&gt;Red exercise&lt;/p&gt;</li>
-</ol>
-<p>Level of complexity increases with each exercises<br>
-New to programming: Do Green exercise and possibly Yellow exercise<br>
-More experienced: Do Yellow exercise and/or Red exercise</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="IMDb">IMDb<a class="anchor-link" href="#IMDb">&#182;</a></h2><p>Download the 250.imdb file from the course website</p>
-<p>This format of this file is:</p>
-<ul>
-<li>Line by line  </li>
-<li>Columns separated by the | character</li>
-<li>Header starting with #</li>
-</ul>
-<p><img src="img/header_imdb.png" alt="Drawing" style="width: 1200px;"/></p>
-<p># Votes | Rating | Year | Runtime | URL | Genres | Title</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Find-the-movie-with-the-highest-rating">Find the movie with the highest rating<a class="anchor-link" href="#Find-the-movie-with-the-highest-rating">&#182;</a></h3><p><img src="img/header_imdb.png" alt="Drawing" style="width: 1000px;"/></p>
-<p>Write step-by-step pseudocode</p>
-
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/header_imdb.png" alt="Drawing" style="width: 1000px;"/></p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Open file</li>
-<li>Initiate counter to keep track of highest rating and movie. Start counter at 0</li>
-<li>Loop over all lines not starting with '#'</li>
-<li>Strip and split the lines into a list</li>
-<li>Save the element containing the rating from the list into a variable</li>
-<li>If current rating is higher than the rating in the counter, replace counter value with rating and movie</li>
-<li>Close file</li>
-<li>Print counter</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="img/header_imdb.png" alt="Drawing" style="width: 1000px;"/></p>
-
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[149]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fh</span>   <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../downloads/250.imdb&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="n">best</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">]</span>           <span class="c1"># here we save the rating and which movie</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
-        <span class="n">cols</span>   <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
-        <span class="n">rating</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">rating</span> <span class="o">&gt;</span> <span class="n">best</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>           <span class="c1"># if the rating is higher than previous highest, update best</span>
-            <span class="n">best</span> <span class="o">=</span> <span class="p">[</span><span class="n">rating</span><span class="p">,</span><span class="n">cols</span><span class="p">[</span><span class="mi">6</span><span class="p">]]</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[149]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[2, 3, 4, 5, 5]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[153]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">a</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[153]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[6, 5, 5, 5, 5, 4, 3, 2, 1]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[154]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[154]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[6, 5, 5, 5, 4, 3, 2, 1]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[159]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[159]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[13, 6, 5, 13, 5, 5, 4, 3, 2, 1, 0, 0]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[162]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Tuples are immutable</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16873,9 +17535,16 @@ More experienced: Do Yellow exercise and/or Red exercise</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[9.3, &#39;The Shawshank Redemption&#39;]
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[162], line 3</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)">### Tuples are immutable</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> a <span style="color: rgb(98,98,98)">=</span> (<span style="color: rgb(98,98,98)">2</span>, <span style="color: rgb(98,98,98)">3</span>, <span style="color: rgb(98,98,98)">4</span>, <span style="color: rgb(98,98,98)">15</span>)
+<span class="ansi-green-fg">----&gt; 3</span> a<span style="color: rgb(98,98,98)">.</span>pop()
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;pop&#39;</pre>
 </div>
 </div>
 
@@ -16883,6 +17552,259 @@ More experienced: Do Yellow exercise and/or Red exercise</p>
 
 </div>
 
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><ul>
+<li>Tuples are immutable sequences of objects</li>
+<li>Always plan your approach before you start coding</li>
+<li>A method always belongs to an object of a specific class, a function does not have to</li>
+<li>The official Python documentation describes the syntax for all built-in functions and methods<ul>
+<li><a href="https://docs.python.org/3.9/">https://docs.python.org/3.9/</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Day-2:-Exercise-3">Day 2: Exercise 3<a class="anchor-link" href="#Day-2:-Exercise-3">&#182;</a></h2><ul>
+<li>Break after the exercise</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Introduction-to-the-course-project">Introduction to the course project<a class="anchor-link" href="#Introduction-to-the-course-project">&#182;</a></h2><ul>
+<li>Everyday in the afternoon from today</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Project-background">Project background<a class="anchor-link" href="#Project-background">&#182;</a></h2><p>Whole genome sequencing in the clinic
+Europe 1+MG project
+• Sequencing costs low
+• Screening for mutations causing diseases from whole genome sequencing data</p>
+<p>Image: cost per genome</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Cystic-fibrosis-(CF)">Cystic fibrosis (CF)<a class="anchor-link" href="#Cystic-fibrosis-(CF)">&#182;</a></h2><ul>
+<li>Hereditary disease</li>
+<li>Affects lungs and digestive system</li>
+<li>Production of thick and sticky mucus </li>
+<li>No cure but symptom management</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Genomic-facts-of-Cystic-Fibrosis">Genomic facts of Cystic Fibrosis<a class="anchor-link" href="#Genomic-facts-of-Cystic-Fibrosis">&#182;</a></h2><ul>
+<li>Cystic Fibrosis Transmembrane Conductance Regulator (CFTR)</li>
+<li>Ion channel protein, acting in epithelial cells</li>
+<li>CFTR gene located on chromosome 7 of the human genome</li>
+<li>Over 1,500 mutations known to cause CF</li>
+<li>Non-synonymous (amino acid changing) mutationsàpremature stop codons</li>
+</ul>
+<p>Include an image of the protein</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Goal-of-the-project">Goal of the project<a class="anchor-link" href="#Goal-of-the-project">&#182;</a></h2><h4 id="Write-a-python-program-that:">Write a python program that:<a class="anchor-link" href="#Write-a-python-program-that:">&#182;</a></h4><ul>
+<li>Extracts the correct CFTR transcript from the human genome</li>
+<li>Translates it into its corresponding amino acid sequence</li>
+<li>Determines if one or more patients have a premature stop codon</li>
+</ul>
+<p><strong>You will be guided step by step towards the final goal</strong></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Data">Data<a class="anchor-link" href="#Data">&#182;</a></h2><ul>
+<li>Human reference genome<ul>
+<li>Chromosome 7 in fasta format</li>
+<li>Gene annotations in GTF format</li>
+</ul>
+</li>
+<li>Genome sequencing data from five patients <ul>
+<li>Chromosome 7 in fasta format</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Fasta-format">Fasta format<a class="anchor-link" href="#Fasta-format">&#182;</a></h2>
+<pre><code>plaintext
+&gt;MT dna:chromosome chromosome:GRCh38:MT:1:16569:1 REF
+GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTT CGTCTGGGGGGTATGCACGCGATAGCATTGCGAGACGCTGGAGCCGGAGCACCCTATGTC GCAGTATCTGTCTTTGATTCCTGCCTCATCCTATTATTTATCGCACCTACGTTCAATATT ACAGGCGAACATACTTACTAAAGTGTGTTAATTAATTAATGCTTGTAGGACATAATAATA ACAATTGAATGTCTGCACAGCCACTTTCCACACAGACATCATAACAAAAAATTTCCACCA AACCCCCCCTCCCCCGCTTCTGGCCACAGCACTTAAACACATCTCTGCCAAACCCCAAAA ACAAAGAACCCTAACACCAGCCTAACCAGATTTCAAATTTTATCTTTTGGCGGTATGCAC TTTTAACAGTCACCCCCCAACTAACACATTATTTTCCCCTCCCACTCCCATACTACTAAT CTCATCAATACAACCCCCGCCCATCCTACCCAGCACACACACACCGCTGCTAACCCCATA CCCCGAACCAACCAAACCCCAAAGACACCCCCCACAGTTTATGTAGCTTACCTCCTCAAA</code></pre>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="GTF-format">GTF format<a class="anchor-link" href="#GTF-format">&#182;</a></h2><ul>
+<li>GTF stands for Gene Transfer Format</li>
+<li>Holds information about gene structure</li>
+<li>Tab-delimited</li>
+<li>Based on the general feature format (GFF), additional structure specific to genes</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+<pre><code>&lt;seqname&gt; &lt;source&gt; &lt;feature&gt; &lt;start&gt; &lt;end&gt; &lt;score&gt; &lt;strand&gt; &lt;frame&gt; [attributes]</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>seqname: The name of the sequence (typically a chromosome).</li>
+<li>source: The source of the annotation (e.g., ENSEMBL).</li>
+<li>feature: The type of feature (e.g., gene, transcript, exon).</li>
+<li>start: The starting position of the feature in the sequence.</li>
+<li>end: The ending position of the feature in the sequence.</li>
+<li>score: A score between 0 and 1000, or . if not applicable.</li>
+<li>strand: The strand on which the feature is located (+ for the forward strand, - for the reverse strand).</li>
+<li>frame: The reading frame, one of '0', '1' or '2', or <code>.</code> if not applicable.</li>
+<li>attribute: A list of key-value pairs providing additional information about the feature.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Attributes">Attributes<a class="anchor-link" href="#Attributes">&#182;</a></h4><p>Some attributes (always semi-colon separated key-value pairs):</p>
+<ul>
+<li>gene_id: The stable identifier for the gene</li>
+<li>gene_version: The stable identifier version for the gene</li>
+<li>gene_name: The official symbol of this gene</li>
+<li>gene_source: The annotation source for this gene</li>
+<li>transcript_id: The stable identifier for this transcript</li>
+<li>transcript_name: The symbold for this transcript derived from the gene name</li>
+<li>exon_id: The stable identifier for this exon</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+<pre><code>&lt;seqname&gt; &lt;source&gt; &lt;feature&gt; &lt;start&gt; &lt;end&gt; &lt;score&gt; &lt;strand&gt; &lt;frame&gt; [attributes]</code></pre>
+
+<pre><code>1   havana  gene    11869   14409   .   +   .   gene_id "ENSG00000223972"; gene_version "5"; gene_name "DDX11L1"; gene_source "havana"; gene_biotype "transcribed_unprocessed_pseudogene";</code></pre>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Tasks">Tasks<a class="anchor-link" href="#Tasks">&#182;</a></h3><h2 id="--Project-page-(give-the-url)">- Project page (give the url)<a class="anchor-link" href="#--Project-page-(give-the-url)">&#182;</a></h2>
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>

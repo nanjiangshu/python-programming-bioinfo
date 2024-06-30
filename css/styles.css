@@ -115,6 +115,27 @@ code {
     margin-left: 40px;
 }
 
+/* Additional custom class for increased top padding in a list */
+ul.morespace li {
+    padding-top: 10px; /* Adjust the value as needed */
+}
+ul.lessspace li {
+    padding-top: 2px; /* Adjust the value as needed */
+}
+
+code {
+    background-color: black;
+    color: white;
+    padding: 2px 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    border-radius: 0px;
+    display: block;
+    width: 100%;
+    white-space: pre-wrap; /* Allows the text to wrap and maintain formatting */
+}
+
 /* Optional styles for when content is visible */
 .expanded .arrow {
     transform: rotate(-135deg);
