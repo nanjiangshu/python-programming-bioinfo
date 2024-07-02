@@ -136,6 +136,34 @@ code {
     white-space: pre-wrap; /* Allows the text to wrap and maintain formatting */
 }
 
+/* Staff table specific styling */
+.staff {
+    width: 800px; /* Set the width of the table */ 
+    border-collapse: collapse;
+    margin-left: 20px; /* Indentation of 60px */
+  }
+  
+  /* Table header styling for the staff table */
+  .staff th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Table data cell styling for the staff table */
+  .staff td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    vertical-align: middle; /* Align content in the middle of the cell */
+  }
+  
+  /* Image styles within staff table cells */
+  .staff img {
+    width: 60px;
+    height: auto; /* Keep the aspect ratio of the images */
+  }
+
 /* Optional styles for when content is visible */
 .expanded .arrow {
     transform: rotate(-135deg);
