@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precourse materials - Python Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="precourse.html">Precourse</a>
+    <a href="lectures.html">Lectures</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="project.html">Project</a>
+</div>
+
+<!-- exercises content goes here -->
+<div class="main-content" id="precourse">
+  <h1>Precourse materials</h1>
+
+  <h2>1. Check these points before you start the course</h2>
+  <ul class="morespace">
+    <li>
+      <p>Python (version higher than 3.9) is properly installed on your machine.</p>
+    </li>
+    <li>
+      <p>All dependencies are installed on your machine.</p>
+      <div class="answer">
+        <p>Check it by running the script <a href="downloads/test.py" target="_blank">test.py</a> in your terminal with</p>
+        <pre><code>python test.py</code></pre>
+      </div>
+    </li>
+    <li>
+      <p>Make sure you have a proper text editor. Examples are</p>
+      <ul class="lessspace">
+        <li><a href="https://www.vim.org/download.php" target="_blank">Vim</a></li>
+        <li><a href="https://atom-editor.cc" target="_blank">Atom</a></li>
+        <li><a href="https://www.jetbrains.com/pycharm/" target="_blank">PyCharm (an IDE - Integrated Development Environment)</a></li>
+        <li><a href="https://www.spyder-ide.org/" target="_blank">Spyder (an IDE - Integrated Development Environment)</a></li>
+      </ul>
+    </li>
+    <li>Download all files and scripts needed for exercises from <a href="downloads.zip" target="_blank">here</a></li>
+
+    <li>Please ensure you sign up for an account at <a href="https://yiyan.baidu.com/">ERNIE Bot</a> or <a href="https://chatgpt.com">ChatGPT</a> so that you can participate in AI assisted programming in the final day of the course.</li>
+  </ul>
+
+  <div class="tip">
+    <p>Throughout the course, we will use the terminal to run scripts, open files etc. If you are unfamiliar with this, consider looking at <a href="https://www.earthdatascience.org/courses/intro-to-earth-data-science/open-reproducible-science/bash/#terminal-shell-and-bash---an-overview" target="_blank">this tutorial</a> to learn how to open a terminal and how to use it. A cheat sheet with the most useful commands can be found <a href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/" target="_blank">here</a> for Linux/Unix/Mac users, and <a href="https://serverspace.io/support/help/windows-cmd-commands-cheat-sheet/" target="_blank">here</a> for Windows users.</p>
+  </div>
+
+  <h2>2. Good to know</h2>
+
+  <h3>Conda</h3>
+  <p>It is recommended to use <a href="https://www.anaconda.com/" target="_blank">Anaconda</a> to setup your Python environment and all dependencies. Anaconda is a very convenient package and environment manager not just for this course. It allows for creation of environments that are isolated from the rest of your system, containing all the required packages for a project and keeping track of dependencies between them. That feature can be very useful when you want to reproduce results that have been created using specific software.</p>
+
+  <p>Start by <a href="https://www.anaconda.com/distribution/" target="_blank">downloading and installing Anaconda</a>.</p>
+
+  <p>We have prepared two conda environment files, one <a href="precourse/environment-win.yml" target="_blank">for Windows</a> and another <a href="precourse/environment-mac.yml" target="_blank">for Mac/Linux</a>.</p>
+  <p>After you have downloaded the relevant environment file, create the conda environment by the following command</p>
+
+  <pre><code>conda env create -f environment-win.yml # for Windows
+conda env create -f environment-mac.yml # for Mac/Linux</code></pre>
+
+  <p>This step might take some time. When the installation is finished, you should be able to see the instructions for activating the environment in the terminal. To activate the environment with the installed packages run</p>
+
+  <pre><code>conda activate workshop</code></pre>
+
+  <p>After that, you can also open the Spyder IDE using the command</p>
+  <pre><code>Spyder</code></pre>
+  <div class=tip>
+    <p>Note: You need to activate the environment every time you open a new terminal window.</p>
+  </div>
+
+
+  <h3>Jupyter</h3>
+  <p>In the course, we will write Python code as standalone files. However, during the lecture, we will also use Jupyter Notebook. <a href="https://jupyter.org/" target="_blank">Jupyter</a> is a web-based tool which allows us to evaluate our code line by line. The Jupyter files are called <a href="https://jupyter.readthedocs.io/en/latest/running.html" target="_blank">notebooks</a> and will serve a single purpose in this course: a quick demonstration of Python code. The environment created above contains Jupyter and you can run it using</p>
+  <pre><code>jupyter notebook</code></pre>
+  <p>This will "freeze" your terminal until you exit jupyter. If you want to run jupyter in the background, so that you can use the specific terminal window, instead run</p>
+  <pre><code>jupyter notebook&</code></pre>
+
+  <h2>3. Tips</h2>
+  <h3><u>Conda</u></h3>
+  <p>To activate an environment run</p>
+  <pre><code>conda activate <environment-name></code></pre>
+
+  <p>To deactive the current environment run</p>
+  <pre><code>conda deactivate</code></pre>
+
+  <p>To see a list of the available environments run</p>
+  <pre><code>conda env list</code></pre>
+
+  <p>To delete an environment run</p>
+  <pre><code>conda remove --name <environment-name> --all -y</code></pre>
+
+
+
+
+</div>
+
+</body>
+</html>
