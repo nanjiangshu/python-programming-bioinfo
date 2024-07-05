@@ -4,7 +4,7 @@ cd "$SCRIPT_DIR" || exit 1
 
 zip -rq downloads.zip downloads
 
-cd assignement
+cd assignment
 
 zip -rq data.zip uncompressed-data
 rm -rf utils/__pycache__
