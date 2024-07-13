@@ -168,3 +168,7 @@ code {
 .expanded .arrow {
     transform: rotate(-135deg);
 }
+
+.not-available {
+    color: red;
+}

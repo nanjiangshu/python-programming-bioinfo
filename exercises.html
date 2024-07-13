@@ -21,7 +21,64 @@
 <div class="welcome-message" id="exercises">
   <h1>Exercises</h1>
   <p>Exercises will be released on the course day</p>
+  <div>
+    <h2>Day 1:</h2>
+    <ul>
+      <li> <a href="publish/Day_1_Exercise_1.html" target="_blank">Day_1_Exercise_1.html</a> </li>
+      <li> <a href="publish/Day_1_Exercise_2.html" target="_blank">Day_1_Exercise_1.html</a> </li>
+      <li> <a href="publish/Day_1_Exercise_3.html" target="_blank">Day_1_Exercise_1.html</a> </li>
+      <li> <a href="publish/Day_1_Exercise_4.html" target="_blank">Day_1_Exercise_1.html</a> </li>
+    </ul>
+  </div>
 </div>
+
+
+<script>
+  // List of days and exercises
+  const days = [
+      { day: 1, exercises: 5 },
+      { day: 2, exercises: 5 },
+      // Add more days as needed
+  ];
+
+  const basePath = 'publish/';
+
+  function fileExists(url) {
+      return fetch(url, { method: 'HEAD' })
+          .then(response => response.ok)
+          .catch(() => false);
+  }
+
+  async function generateContent() {
+      const contentDiv = document.getElementById('content');
+
+      for (const day of days) {
+          const dayHeader = document.createElement('h2');
+          dayHeader.textContent = `Day ${day.day}:`;
+          contentDiv.appendChild(dayHeader);
+
+          const ul = document.createElement('ul');
+          for (let i = 1; i <= day.exercises; i++) {
+              const li = document.createElement('li');
+              const fileName = `Day_${day.day}_Exercise_${i}.html`;
+              const filePath = `${basePath}${fileName}`;
+
+              if (await fileExists(filePath)) {
+                  const a = document.createElement('a');
+                  a.href = filePath;
+                  a.textContent = fileName;
+                  li.appendChild(a);
+              } else {
+                  li.textContent = `Day ${day.day}, Exercise ${i}: not available yet`;
+                  li.classList.add('not-available');
+              }
+
+              ul.appendChild(li);
+          }
+          contentDiv.appendChild(ul);
+      }
+  }
+</script>
 
 </body>
 </html>
