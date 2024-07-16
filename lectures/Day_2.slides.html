@@ -14673,13 +14673,13 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Review-of-Day-1">Review of Day 1<a class="anchor-link" href="#Review-of-Day-1">&#182;</a></h2><ul>
 <li>Liternals and their associated data types, variables, and basic operations<ul>
-<li>Numeric, String, Boolean, None</li>
+<li>Four basic data types: Numeric, String, Boolean, None</li>
 <li>Collection of data types: List, Tuple, Set and Dictionary</li>
-<li>Naming convention of variables</li>
+<li>Naming of variables, rules and conventions</li>
 </ul>
 </li>
 <li>Built-in functions and operations<ul>
-<li>print, len, max, sum </li>
+<li>print, type, len, max, sum </li>
 </ul>
 </li>
 <li>Loops<ul>
@@ -14727,7 +14727,7 @@ div.jp-OutputPrompt {
 <h2 id="Day-2">Day 2<a class="anchor-link" href="#Day-2">&#182;</a></h2><ul>
 <li><strong>Session 1</strong>:<ul>
 <li>Python Script: Dump your code into a script</li>
-<li>File I/O: Read from and write to files</li>
+<li>File I/O: Read and write files</li>
 </ul>
 </li>
 <li><strong>Session 2</strong>:<ul>
@@ -14773,12 +14773,12 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">genotype</span> <span class="o">=</span> <span class="s2">"AG"</span>
@@ -14796,32 +14796,6 @@ div.jp-OutputPrompt {
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>TP53
-COX2
-EGFR
-MTOR
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div><div class="fragment">
@@ -14842,17 +14816,10 @@ MTOR
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5-mins-exercise">5 mins exercise<a class="anchor-link" href="#5-mins-exercise">&#182;</a></h2><p>Put some of your Python code you have written yesterday and save it in a Python script, run it in a terminal with either</p>
-<hr>
-<div class="highlight"><pre><span></span>python<span class="w"> </span>yourscript.py
-</pre></div>
-<p>or</p>
-<div class="highlight"><pre><span></span>./yourscript.py
-</pre></div>
-<hr>
-<ul>
-<li>Replace <code>yourscript.py</code> with the actual name you use</li>
-<li>You need to add <code>#!/usr/bin/env python</code> at the beginning of the script and also make the script executable in order to run it with the second method </li>
+<h3 id="About-the-file-extension-.py">About the file extension <code>.py</code><a class="anchor-link" href="#About-the-file-extension-.py">&#182;</a></h3><ul>
+<li>Actually a Python script can have any extention or even without an extension. </li>
+<li>We use it as a convention </li>
+<li>Other benefits of using the <code>.py</code> entension - people and the OS can recognize it. </li>
 </ul>
 
 </div>
@@ -14865,7 +14832,30 @@ MTOR
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="File-I/O---read-from-file-and-write-to-file">File I/O - read from file and write to file<a class="anchor-link" href="#File-I/O---read-from-file-and-write-to-file">&#182;</a></h2>
+<h2 id="5-mins-exercise">5 mins exercise<a class="anchor-link" href="#5-mins-exercise">&#182;</a></h2><p>Put some of your Python code you have written yesterday and save it in a Python script, run it in a terminal with either</p>
+<hr>
+<div class="highlight"><pre><span></span>python<span class="w"> </span>yourscript.py
+</pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span>./yourscript.py<span class="w"> </span><span class="o">(</span>not<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>Windows<span class="w"> </span>user<span class="o">)</span>
+</pre></div>
+<hr>
+<ul>
+<li>Replace <code>yourscript.py</code> with the actual name you use</li>
+<li>You need to add <code>#!/usr/bin/env python</code> at the beginning of the script and also make the script executable in order to run it with the second method (only for Mac or Linux users)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="File-I/O---read-and-write-files">File I/O - read and write files<a class="anchor-link" href="#File-I/O---read-and-write-files">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14941,7 +14931,7 @@ MTOR
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Specify-encoding='utf-8'-when-opening-a-file-in-Python-to-ensure-proper-handling-of-text-files-that-contain-non-ASCII-characters,-such-as-Chinese-characters.">Specify <code>encoding='utf-8'</code> when opening a file in Python to ensure proper handling of text files that contain non-ASCII characters, such as Chinese characters.<a class="anchor-link" href="#Specify-encoding='utf-8'-when-opening-a-file-in-Python-to-ensure-proper-handling-of-text-files-that-contain-non-ASCII-characters,-such-as-Chinese-characters.">&#182;</a></h4>
+<h4 id="You-may-also-specify-encoding='utf-8'-when-opening-a-file-in-Python-to-ensure-proper-handling-of-text-files-that-contain-non-ASCII-characters,-such-as-Chinese-characters.">You may also specify <code>encoding='utf-8'</code> when opening a file in Python to ensure proper handling of text files that contain non-ASCII characters, such as Chinese characters.<a class="anchor-link" href="#You-may-also-specify-encoding='utf-8'-when-opening-a-file-in-Python-to-ensure-proper-handling-of-text-files-that-contain-non-ASCII-characters,-such-as-Chinese-characters.">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14955,7 +14945,7 @@ MTOR
 <div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;filename.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
-
+<h4 id="However,-for-Python-3,-the-default-encoding-is-usually-'utf-8',-so-it's-not-needed.">However, for Python 3, the default encoding is usually 'utf-8', so it's not needed.<a class="anchor-link" href="#However,-for-Python-3,-the-default-encoding-is-usually-'utf-8',-so-it's-not-needed.">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14971,64 +14961,24 @@ MTOR
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seqfile</span> <span class="o">=</span> <span class="s2">"../files/one_dna_sequence.fa"</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">seqfile</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&gt;SEQUENCE_1
-
-AGCTTAGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGC
-
-TTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTA
-
-GCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCT
-
-AGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTT
-
-AGCTAAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGC
-
-TAAGCTTAGCTAAGCTTAGCTAGCTAGCTAGCTTAGCTAAGCTTAGCTAAGCTTAGCTAA
-
-GCTTAGCTAGCTAGCTAGCTTAGCTA
-
-
-
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div></div></section></section><section><section>
@@ -15044,12 +14994,12 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">string1</span>  <span class="o">=</span> <span class="s1">'  an example string with whitespaces at both ends   '</span>
@@ -15062,37 +15012,12 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;an example string with whitespaces at both ends&#39;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="n">string2</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -15104,37 +15029,12 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;an&#39;, &#39;example&#39;, &#39;string&#39;, &#39;with&#39;, &#39;whitespaces&#39;, &#39;at&#39;, &#39;both&#39;, &#39;ends&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="n">string1</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -15144,31 +15044,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;an&#39;, &#39;example&#39;, &#39;string&#39;, &#39;with&#39;, &#39;whitespaces&#39;, &#39;at&#39;, &#39;both&#39;, &#39;ends&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div></div></section></section><section><section>
@@ -15196,40 +15071,40 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, Python!&quot;</span><span class="p">)</span>
-</pre></div>
-
+<h3 id="Similar-to-file-reading,-you-can-also-use-the-with-keyword">Similar to file reading, you can also use the <code>with</code> keyword<a class="anchor-link" href="#Similar-to-file-reading,-you-can-also-use-the-with-keyword">&#182;</a></h3>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, Python!&quot;</span><span class="p">)</span>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"../newproject/output.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Hello, Python!"</span><span class="p">)</span>
 </pre></div>
 
+     </div>
 </div>
 </div>
 </div>
+
 </div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seqfile</span> <span class="o">=</span> <span class="s2">"../files/one_dna_sequence.fa"</span>
@@ -15241,7 +15116,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"&gt;"</span><span class="p">):</span>
             <span class="n">seqlength</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
-<span class="n">outfile</span> <span class="o">=</span> <span class="s2">"../files/output/length_of_dna_sequence.txt"</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="s2">"../newproject/length_of_dna_sequence.txt"</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Length of DNA sequence: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">seqlength</span><span class="p">))</span>
 </pre></div>
@@ -15285,7 +15160,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Description-of-the-task">Description of the task<a class="anchor-link" href="#Description-of-the-task">&#182;</a></h2><p>You have a VCF file with a number of samples. You are interested in only one of the samples (sample1) and one region (chr5, 1,200,000-1,300,000). What you want to know is whether this sample has any variants in this region, and if so, which variants.</p>
+<h2 id="Description-of-the-task">Description of the task<a class="anchor-link" href="#Description-of-the-task">&#182;</a></h2><p>You have a VCF file with a number of samples. You are interested in only one of the samples (sample1) and one region (chr5, 1,200,000-1,300,000, including the start and end positions). What you want to know is whether this sample has any variants in this region, and if so, which variants.</p>
 
 </div>
 </div>
@@ -15298,7 +15173,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="What-is-your-input?">What is your input?<a class="anchor-link" href="#What-is-your-input?">&#182;</a></h3><p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
-<ul>
+<ol>
 <li><strong>CHROM</strong>: 1 (Chromosome 1)</li>
 <li><strong>POS</strong>: 10177 (Position 10177 on the chromosome)</li>
 <li><strong>ID</strong>: rs367896725 (Reference SNP ID)</li>
@@ -15307,8 +15182,8 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 <li><strong>QUAL</strong>: 50 (Quality score)</li>
 <li><strong>FILTER</strong>: PASS (status, meaning passed all quality control)</li>
 <li><strong>FORMAT</strong>: GT:DP:CB (Genotype, Depth, Cell Barcode)</li>
-<li><strong>SAMPLES</strong>: 0/1:30:SM(Sample genotypes and additional info)</li>
-</ul>
+<li><strong>SAMPLES</strong>: 0/1:30:SM (Sample genotypes and additional info)</li>
+</ol>
 
 </div>
 </div>
@@ -15332,16 +15207,20 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong><code>0/1</code></strong></p>
 <ul>
+<li><code>0/1</code><ul>
 <li>For human, and many other organisms, there are two copies of genetic information, inherited from both parents.</li>
 <li><code>0</code> means DNA at this position is the same as reference allele (<code>A</code>), </li>
 <li><code>1</code> means has alternative allele, in this case <code>AC</code> </li>
 </ul>
+</li>
+</ul>
 <p><strong>The notation of alternative allele is not always <code>1</code></strong></p>
 <ul>
-<li><code>0/2</code></li>
+<li><code>0/2</code><ul>
 <li><code>2</code> means it is the second alternative allele, i.e. <code>C</code> in this case</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -15368,13 +15247,25 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Task:">Task:<a class="anchor-link" href="#Task:">&#182;</a></h4><p>You have a VCF file with a number of samples. You are interested in only one of the samples (sample1) and one region (chr5, 1,200,000-1,300,000, including the start and end positions). What you want to know is whether this sample has any variants in this region, and if so, which variants.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 <ul>
 <li>Open the file and loop over lines (ignore lines with started with <code>#</code>)</li>
 <li>Identify lines where chromosome is equal to <code>5</code> and position is between 1,200,000 and 1,300,000</li>
-<li>Isolate the column that contains the genotype for sample1</li>
-<li>Extract the genotypes only from the column</li>
-<li>Check if the genotype contains any alternate alleles</li>
+<li>Isolate the column that contains the genotype for sample1, e.g. <code>0/1:30:SM</code></li>
+<li>Extract only the genotypes (e.g. <code>0/1</code>) from the column</li>
+<li>Check if the genotype contains any alternate alleles, i.e., if not <code>0/0</code>.</li>
 <li>Print any variants containing alternate alleles for this sample between specified region</li>
 </ul>
 
@@ -15388,8 +15279,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
-
+<h4 id="Open-the-file-and-loop-over-lines-(ignore-lines-starting-with-%23),-and-print-the-first-record">Open the file and loop over lines (ignore lines starting with <code>#</code>), and print the first record<a class="anchor-link" href="#Open-the-file-and-loop-over-lines-(ignore-lines-starting-with-%23),-and-print-the-first-record">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15400,25 +15290,25 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Open the file and loop over lines (ignore lines starting with #), and print the first record</strong></p>
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px; margin:0px;"/></p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
-    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>  
-            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
             <span class="k">break</span>
 <span class="c1"># Next, find chromosome 5</span>
 </pre></div>
@@ -15428,29 +15318,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1	762969	rs115616822	G	A	.	PASS	AA=g;AC=1;AN=120;DP=226;GP=1:773106;BN=132	GT:DP:CB	0/0:1:SMB	0/0:6:SMB	0/0:3:SMB	0/0:5:SMB	0/0:15:SMB	0/0:6:SMB	0/0:4:SMB	0/0:1:SMB	0/0:11:SMB	0/0:0:SMB	0/0:3:SMB	0/0:3:SMB	0/0:5:SMB	0/0:2:SMB	0/0:8:SMB	0/0:2:SMB	0/0:4:SMB	0/0:2:SMB	0/0:4:SMB	0/0:1:SMB	0/0:6:SMB	0/0:3:SMB	0/0:6:SMB	0/0:1:SMB	0/0:2:SMB	0/0:6:SMB	0/0:7:SMB	0/0:0:SMB	0/0:0:SMB	0/0:3:SMB	0/0:4:SMB	0/0:3:SMB	0/0:2:SB	0/0:6:SMB	0/0:6:SMB	0/0:1:SMB	0/0:1:SMB	0/0:0:SMB	0/0:8:SMB	0/0:7:SMB	0/0:0:SMB	0/0:1:SMB	0/0:3:SMB	0/0:0:SMB	0/0:8:SMB	0/0:5:SMB	0/0:4:SMB	0/0:0:SMB	0/0:8:SMB	0/0:0:SMB	0/0:4:SMB	0/0:5:SMB	0/0:7:SMB	0/0:4:SMB	0/0:2:SMB	0/0:0:SMB	0/0:2:SMB	0/0:2:SMB	0/0:5:SMB	0/1:8:SMB
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15458,8 +15325,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Identify lines where chromosome is 5 and position is between 1,200,000 and 1,300,000</strong></p>
-
+<h4 id="Identify-lines-where-chromosome-is-5">Identify lines where chromosome is <code>5</code><a class="anchor-link" href="#Identify-lines-where-chromosome-is-5">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15475,21 +15341,23 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'5'</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
                 <span class="k">break</span>
 
 <span class="c1"># Next, find the correct region</span>
@@ -15500,30 +15368,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5	106565	rs115608877	G	T	.	PASS	AA=.;AC=7;AN=120;DP=91;GP=5:53565;BN=132	GT:DP:CB	1/0:1:SM	1/0:3:SM	0/0:1:SM	0/0:2:SM	0/0:0:S	0/0:0:SM	0/0:0:SM	0/0:1:S	0/0:0:S	0/0:0:S	0/0:2:SM	0/1:1:SM	0/0:3:SM	0/1:0:SM	0/0:2:SM	1/0:1:S	0/0:1:SM	0/0:0:SM	0/0:2:SM	0/0:1:SM	0/0:5:SM	0/0:0:S	0/0:1:SM	0/0:0:S	0/0:1:SM	0/0:1:SM	0/1:1:SM	0/1:1:SM	0/0:2:SM	0/0:3:SM	0/0:2:SM	0/0:8:SM	0/0:0:SM	0/0:7:SM	0/0:4:SM	0/0:0:S	0/0:2:S	0/0:0:SM	0/0:3:SM	0/0:2:SM	0/0:1:SM	0/0:2:SM	0/0:3:S	0/0:0:SM	0/0:3:SM	0/0:1:SM	0/0:0:SM	0/0:0:SM	0/0:3:S	0/0:1:SM	0/0:0:SM	0/0:0:SM	0/0:3:SM	0/0:4:SM	0/0:2:SM	0/0:1:SM	0/0:0:SM	0/0:0:SM	0/0:1:SM	0/0:2:SM
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15531,27 +15375,39 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1200px;"/></p>
+<h4 id="Identify-lines-where-chromosome-is-5-and-position-is-between-1,200,000-and-1,300,000">Identify lines where chromosome is <code>5</code> and position is between <code>1,200,000</code> and <code>1,300,000</code><a class="anchor-link" href="#Identify-lines-where-chromosome-is-5-and-position-is-between-1,200,000-and-1,300,000">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px;"/></p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
             <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">):</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
                 <span class="k">break</span>
 <span class="c1"># Next, find the genotypes for sample1</span>
@@ -15562,29 +15418,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;5&#39;, &#39;1207129&#39;, &#39;rs111580366&#39;, &#39;G&#39;, &#39;A&#39;, &#39;.&#39;, &#39;PASS&#39;, &#39;AA=G;AC=1;AN=120;DP=329;GP=5:1154129;BN=132&#39;, &#39;GT:DP:CB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/1:17:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:8:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:7:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:14:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:7:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:10:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:13:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:9:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:8:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:10:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:7:SMB&#39;, &#39;0/0:0:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:12:SMB&#39;, &#39;0/0:8:SMB&#39;, &#39;0/0:15:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:2:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:6:SMB&#39;, &#39;0/0:4:SMB&#39;, &#39;0/0:5:SMB&#39;, &#39;0/0:1:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:3:SMB&#39;, &#39;0/0:3:SMB&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15592,7 +15425,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Isolate-the-column-that-contains-the-genotype-for-sample1">Isolate the column that contains the genotype for sample1<a class="anchor-link" href="#Isolate-the-column-that-contains-the-genotype-for-sample1">&#182;</a></h3>
+<h4 id="Isolate-the-column-that-contains-the-genotype-for-sample1">Isolate the column that contains the genotype for sample1<a class="anchor-link" href="#Isolate-the-column-that-contains-the-genotype-for-sample1">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15608,24 +15441,25 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
             <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">geno</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">):</span>
+                <span class="n">geno_col</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">geno_col</span><span class="p">)</span>
                 <span class="k">break</span>
                     
 <span class="c1"># Next, extract the genotypes only</span>
@@ -15636,29 +15470,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0/0:4:SMB
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15666,8 +15477,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Extract the genotypes only from the column</strong></p>
-
+<h4 id="Extract-only-the-genotypes-from-the-column">Extract only the genotypes from the column<a class="anchor-link" href="#Extract-only-the-genotypes-from-the-column">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15683,25 +15493,28 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
             <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">):</span>
+                <span class="n">geno_col</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+                <span class="n">geno</span> <span class="o">=</span> <span class="n">geno_col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">geno</span><span class="p">)</span>
                 <span class="k">break</span>
+                
 <span class="c1"># Next, find in which positions sample1 has alternate alleles</span>
 </pre></div>
 
@@ -15710,29 +15523,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0/0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15740,8 +15530,7 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Check if the genotype contains any alternate alleles</strong></p>
-
+<h4 id="Check-if-the-genotype-contains-any-alternate-alleles">Check if the genotype contains any alternate alleles<a class="anchor-link" href="#Check-if-the-genotype-contains-any-alternate-alleles">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -15757,23 +15546,25 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
             <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">):</span>
+                <span class="n">geno_col</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+                <span class="n">geno</span> <span class="o">=</span> <span class="n">geno_col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="k">if</span> <span class="n">geno</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"0/0"</span><span class="p">]:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">geno</span><span class="p">)</span>
 <span class="c1">#Next, print nicely</span>
@@ -15784,30 +15575,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1/1
-1/1
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15815,44 +15582,33 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Print any variants containing alternate alleles for this sample between specified region</strong></p>
-
+<h4 id="Print-any-variants-containing-alternate-alleles-for-this-sample-between-specified-region">Print any variants containing alternate alleles for this sample between specified region<a class="anchor-link" href="#Print-any-variants-containing-alternate-alleles-for-this-sample-between-specified-region">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../img/vcf_header.png" alt="Drawing" style="width: 1000px; margin=0"/></p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcf_file</span> <span class="o">=</span> <span class="s1">'../downloads/genotypes_small.vcf'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
-            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
             <span class="n">chrom</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">pos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">:</span>
-                <span class="n">geno</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">chrom</span> <span class="o">==</span> <span class="s1">'5'</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1200000</span> <span class="o">&lt;=</span> <span class="n">pos</span> <span class="o">&lt;=</span> <span class="mi">1300000</span><span class="p">):</span>
+                <span class="n">geno_col</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+                <span class="n">geno</span> <span class="o">=</span> <span class="n">geno_col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="k">if</span> <span class="n">geno</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"0/0"</span><span class="p">]:</span>
                     <span class="n">ref</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
                     <span class="n">alt</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-                    <span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">chrom</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">pos</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">ref</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">alt</span><span class="si">}</span><span class="s2"> has genotype: </span><span class="si">{</span><span class="n">geno</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="n">info</span> <span class="o">=</span> <span class="n">chrom</span> <span class="o">+</span> <span class="s2">":"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"_"</span> <span class="o">+</span> <span class="n">ref</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">alt</span> <span class="o">+</span> <span class="s2">" has genotype: "</span><span class="o">+</span> <span class="n">geno</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
 
@@ -15861,30 +15617,6 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5:1235651_C-T has genotype: 1/1
-5:1277795_G-C has genotype: 1/1
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15892,9 +15624,8 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Take-a-break">Take a break<a class="anchor-link" href="#Take-a-break">&#182;</a></h2><hr>
-<h2 id="Quiz-for-Day-2">Quiz for Day 2<a class="anchor-link" href="#Quiz-for-Day-2">&#182;</a></h2><ul>
-<li>Link: <a href="https://python-bioinfo.bioshu.se/quiz.html">https://python-bioinfo.bioshu.se/quiz.html</a></li>
+<h2 id="Day-2,-Exercise-2">Day 2, Exercise 2<a class="anchor-link" href="#Day-2,-Exercise-2">&#182;</a></h2><ul>
+<li>Link: <a href="https://python-bioinfo.bioshu.se/exercises.html">https://python-bioinfo.bioshu.se/exercises.html</a></li>
 </ul>
 <hr>
 <h2 id="Lunch">Lunch<a class="anchor-link" href="#Lunch">&#182;</a></h2>
@@ -15909,24 +15640,13 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Afternoon-session">Afternoon session<a class="anchor-link" href="#Afternoon-session">&#182;</a></h2><hr>
-<h3 id="1.-Exercise-2-of-Day-2">1. Exercise 2 of Day 2<a class="anchor-link" href="#1.-Exercise-2-of-Day-2">&#182;</a></h3><p>__</p>
+<h3 id="1.-Quiz-for-Day-2">1. Quiz for Day 2<a class="anchor-link" href="#1.-Quiz-for-Day-2">&#182;</a></h3><ul>
+<li>Link: <a href="https://python-bioinfo.bioshu.se/quiz.html">https://python-bioinfo.bioshu.se/quiz.html</a></li>
+</ul>
+<hr>
 <h3 id="2.-Introduction-to-the-course-project">2. Introduction to the course project<a class="anchor-link" href="#2.-Introduction-to-the-course-project">&#182;</a></h3><hr>
 <h5 id="Break">Break<a class="anchor-link" href="#Break">&#182;</a></h5><hr>
 <h3 id="3.-Team-building">3. Team building<a class="anchor-link" href="#3.-Team-building">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Day-2,-Exercise-2">Day 2, Exercise 2<a class="anchor-link" href="#Day-2,-Exercise-2">&#182;</a></h2><ul>
-<li>Link: <a href="https://python-bioinfo.bioshu.se/exercises.html">https://python-bioinfo.bioshu.se/exercises.html</a></li>
-</ul>
-
 </div>
 </div>
 </div>
@@ -15974,10 +15694,10 @@ GCTTAGCTAGCTAGCTAGCTTAGCTA
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Genomic-facts-of-Cystic-Fibrosis">Genomic facts of Cystic Fibrosis<a class="anchor-link" href="#Genomic-facts-of-Cystic-Fibrosis">&#182;</a></h2><ul>
-<li>CF is caused by mutations in Cystic Fibrosis Transmembrane Conductance Regulator (CFTR)</li>
-<li>The CFTR protein is an ion channel protein, acting like gates in a cell membrane that control the traffic of molecules through the membrane</li>
-<li>For normal people, CFTR makes a gate for chloride ions. When chloride moves out of the cell, taking water with it, and thus thins mucus</li>
-<li>For CF patients, gene mutations in CFTR prevent this functionality, causing the mucus stays sticky and thick
+<li>CF is caused by mutations in Cystic Fibrosis Transmembrane Conductance Regulator (CFTR).</li>
+<li>The CFTR protein is an ion channel protein, acting like gates in a cell membrane that control the traffic of molecules through the membrane.</li>
+<li>For regular people, CFTR acts as a gate for chloride ions. When chloride leaves the cell, it carries water with it, which makes mucus less thick.</li>
+<li>For patients with CF, gene mutations in CFTR prevent this functionality, causing the mucus stays sticky and thick.
 <img src="img/CFTR.jpg" alt="cystic fibrosis" style="width: 300px;"/><p style="font-size: 12px;">source: cff.org</p></li>
 </ul>
 
@@ -16068,7 +15788,6 @@ GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTT CGTCTGGGGGGTATGCACG
 <li>GTF stands for Gene Transfer Format</li>
 <li>Holds information about gene structure</li>
 <li>Tab-delimited</li>
-<li>Based on the general feature format (GFF), additional structure specific to genes</li>
 </ul>
 
 </div>
@@ -16094,17 +15813,17 @@ GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTT CGTCTGGGGGGTATGCACG
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>seqname: The name of the sequence (typically a chromosome).</li>
-<li>source: The source of the annotation (e.g., ENSEMBL).</li>
-<li>feature: The type of feature (e.g., gene, transcript, exon).</li>
-<li>start: The starting position of the feature in the sequence.</li>
-<li>end: The ending position of the feature in the sequence.</li>
-<li>score: A score between 0 and 1000, or . if not applicable.</li>
-<li>strand: The strand on which the feature is located (+ for the forward strand, - for the reverse strand).</li>
-<li>frame: The reading frame, one of '0', '1' or '2', or <code>.</code> if not applicable.</li>
-<li>attribute: A list of key-value pairs providing additional information about the feature.</li>
-</ul>
+<ol>
+<li><code>seqname</code>: The name of the sequence (typically a chromosome).</li>
+<li><code>source</code>: The source of the annotation (e.g., ENSEMBL).</li>
+<li><code>feature</code>: The type of feature (e.g., gene, transcript, exon).</li>
+<li><code>start</code>: The starting position of the feature in the sequence.</li>
+<li><code>end</code>: The ending position of the feature in the sequence.</li>
+<li><code>score</code>: A score between 0 and 1000, or . if not applicable (indicating the reliability of the annotation).</li>
+<li><code>strand</code>: The strand on which the feature is located (<code>+</code> for the forward strand, <code>-</code> for the reverse strand).</li>
+<li><code>frame</code>: The reading frame, one of '0', '1' or '2', or <code>.</code> if not applicable.</li>
+<li><code>attribute</code>: A list of key-value pairs providing additional information about the feature.</li>
+</ol>
 
 </div>
 </div>
@@ -16116,7 +15835,7 @@ GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCATTTGGTATTTT CGTCTGGGGGGTATGCACG
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Attributes">Attributes<a class="anchor-link" href="#Attributes">&#182;</a></h2><p>Some attributes (always semi-colon separated key-value pairs):</p>
+<h2 id="Attributes">Attributes<a class="anchor-link" href="#Attributes">&#182;</a></h2><p>Some attributes (always semi-colon <code>';'</code> separated key-value pairs):</p>
 <ul>
 <li>gene_id: The stable identifier for the gene</li>
 <li>gene_version: The stable identifier version for the gene</li>
