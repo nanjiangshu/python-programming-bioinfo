@@ -32,6 +32,8 @@
 
     <p>Cystic fibrosis is a complex disease, where patients often manifest the following symptoms: problems with lung functions, diabetes and infertility. From a genetic point of view, there are several mutations associated with this disease. The gene CFTR (short for Cystic Fibrosis Transmembrane Conductance Regulator) encodes an ion channel protein acting in epithelial cells and is encoded on chromosome 7 of the human genome. CFTR carries several non-synonymous genetic variants, some of which leading to premature stop codons that are known to cause the disease.</p>
 
+    <p>In the annotation file (the GTF file), the CFTR gene has the id <b>ENSG00000001626</b> on the chromosome <b>7</b>, and this entry can be found in the <b>attribute</b> field in the GTF file</p>
+
     <h2>Goal</h2>
     <p>In this assignment, you have access to the human reference genome (chromosome 7) as well as the full genome annotation. In addition, you have genome sequence data of chromosome 7 from five individuals from a family at risk of carrying mutations related to the disease.</p>
     <p>Your task is to write a Python program that:</p>
@@ -214,7 +216,9 @@ transcript_id = d_attr['transcript_id']
     </div>
 
     <ol start="2">
-        <li>Which of these transcripts is the longest transcript in nucleotides?</li>
+        <li>Which of these transcripts is the longest transcript in nucleotides?
+          Print the transcript id and its length in nucleotides.
+        </li>
     </ol>
 
     <div class="question">
@@ -226,6 +230,10 @@ transcript_id = d_attr['transcript_id']
           <pre><code>
 length = stop_position - start_position + 1
           </code></pre>
+        </p>
+        In order to get the transcript with the longest length, you can use
+        two a tuple to store the transcript id and its length. Then, in each iteration, compare the length of the current transcript with the length of the longest transcript. If the current transcript is longer, update the tuple with the current transcript id and its length. 
+        <p>
         </p>
 
         </p>
@@ -251,8 +259,16 @@ length = stop_position - start_position + 1
         <p><strong>Tip:</strong></p>
       </div>
       <div class="tip-content">
-        <p>Open the reference fasta file. In a loop, ignore the first line and append each line to a list, removing the trailing newline character. Outside the loop, use the join function to concatenate the lines from the list to get the reference sequence. Avoid concatenation inside the loop, as it is slow and wastes memory. Extract the start and stop positions of the longest transcript to fetch its DNA sequence from the reference sequence, but think about where the index starts from.</p>
-        <p>You can also use the function <b>readseq(seqfile)</b> from the 2nd question of <a href="https://python-bioinfo.bioshu.se/publish/Day_3_Exercise_2.html" target="_blank">Day 3, Exercise 2</a></p>
+        <p>Open the reference fasta file. In a loop, ignore the first line and append each line to a list, removing the trailing newline character. Outside the loop, use the join function to concatenate the lines from the list to get the reference sequence. Avoid concatenation inside the loop, as it is slow and wastes memory. Extract the start and stop positions of the longest transcript to fetch its DNA sequence from the reference sequence, but think about where the index starts from.save the result in a string called e.g. <b>ref_seq</b>.</p>
+        <p>You can also use the function <b>readseq(seqfile)</b> from the 2nd question of <a href="https://python-bioinfo.bioshu.se/publish/Day_3_Exercise_2.html" target="_blank">Day 3, Exercise 2</a>, although it's not optimal</p>
+        <p>Fetch the start and stop position for the longest transcript (<b>ENST00000003084</b>)
+          Then use the following code to extract the DNA sequence of the transcript
+          <pre><code>
+start = 117 # replace this with the actual start position
+stop = 188 # replace this with the actual stop position
+transcript_seq = ref_seq[start-1:stop]
+          </code></pre>
+        </p>
       </div>
     </div>
 
@@ -276,6 +292,14 @@ length = stop_position - start_position + 1
       <div class="tip-content">
         <p>First, you need to save the start and stop positions of all exons of the longest transcript. Then you can use a similar loop to the one you used in task 3 to extract the DNA sequence of each exon. Finally, you need to concatenate the DNA sequences of all exons.</p>
         <p>An exon is recognized if the feature (3rd column of the line) is equal to <b>exon.</b></p>
+        <p>Once you have retrieve start and stop positions for all exons, use the following code to extract the DNA sequence of the exons
+          <pre><code>
+exon_seq = ""
+for start, stop in exon_positions:
+    exon_seq += ref_seq[start-1:stop]
+          </code></pre>
+          Or you can also add the sequences of each exon to a list and then join them together.
+        </p>
       </div>
     </div>
 
@@ -300,6 +324,19 @@ length = stop_position - start_position + 1
       </div>
       <div class="tip-content">
         <p>Find the start_codon and stop_codon features of the longest transcript in the GTF file, including the start positions of the start- and stop-codon. Check that the start_codon has the sequence ATG, and that the stop_codon corresponds to a proper stop codon. Make your program print a warning message in case the transcript does not begin with a start-codon and end with a stop-codon.</p>
+        <p>When <b>feature</b>(the 3rd column) is equal to <b>start_codon</b>, the start position (4th column) is the position of the start codon</p>
+        <p>When <b>feature</b>(the 3rd column) is equal to <b>stop_codon</b>, the start position (4th column) is the position of the stop codon</p>
+        <p>The start codon (3 letter nucleotides) can be retrieved by the following code
+          <pre><code>
+start_codon = ref_seq[pos_start_codon-1:pos_start_codon+2]
+          </code></pre>
+        <p>The stop codon (3 letter nucleotides) can be retrieved by the following code
+          <pre><code>
+stop_codon = ref_seq[pos_stop_codon-1:pos_stop_codon+2]
+          </code></pre>
+          <p>If start_codon is equal to <b>ATG</b>, its good, otherwise print the warning message</p>
+          <p>If stop_codon is one of <b>[TAG, TAA, TGA]</b>, its good, otherwise print the warning message</p>
+        </p>
       </div>
     </div>
 
@@ -324,6 +361,14 @@ length = stop_position - start_position + 1
       </div>
       <div class="tip-content">
         <p>Translate the DNA sequence of the concatenated exons into amino acids from the start codon position of the transcript on.</p>
+        <p>
+          Suppose <b>pos_exons</b> contains the start and end positions of all exons of the transcript, <b>pos_start_codon</b> is the start position of the start codon of the transcript, and <b>mRNA</b> is the concatenated sequence of all exons. Then you can use the following code to translate the DNA sequence of the exons into amino acids
+          <pre><code>
+from utils.rna import translate_dna
+pos_start = pos_start_codon - exons[0][0] # the start position of the first exon of the mRNA
+aminoacids = translate_dna(mRNA[start:])
+          </code></pre>
+        </p>
       </div>
     </div>
 
