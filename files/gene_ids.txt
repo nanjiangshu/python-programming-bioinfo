@@ -1,4 +1,0 @@
-TP53
-COX2
-EGFR
-MTOR    

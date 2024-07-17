@@ -95,6 +95,7 @@
     <p>We recommend creating a folder in your file system, called <b>project</b>. In this folder you can add all the required files, such as the reference and annotation files, as well as the downloaded folder from the previous step.</p>
     <ol>
         <li>Unzip the reference DNA and annotation files (fasta and GTF respectively), so that you can check their contents. That should be possible using 7zip in Windows and double clicking the files in MacOS and Linux.</li>
+        <p>The instructions below works for Mac or Linux users</p> 
         <li>Now that the files are decompressed, you can check their content using the <code>head</code> command on your terminal. You can search online how to use the <code>head</code> command or type <code>head --help</code> to see the usage instructions. You can check the first two lines of each file using the <code>head</code> command.</li>
     </ol>
 
@@ -104,7 +105,9 @@
           <p><strong>Answer:</strong></p>
       </div>
       <div class="answer-content">
+          <p>For Linux or Mac users</p>
           <p>Run <code>head -n 2</code> to see the first two lines</p>
+          <p>For Windows user, please use Python to loops through the file by line and print only the first two lines, i.e. <b>break</b> the loop when the line counter is more than 2.</p>
       </div>
     </div>
 
@@ -186,7 +189,7 @@ def parse_attribute(attribute):
     li_attr = [x.strip() for x in attribute.split(';') if x.strip()]
     d_attr = {}
     for attr in li_attr:
-        key_and_value = attr.split(' ')
+        key_and_value = attr.split(' ', maxsplit=1)
         if (len(key_and_value) < 2):
             print(key_and_value)
         key = key_and_value[0]
