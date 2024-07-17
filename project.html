@@ -116,6 +116,7 @@
       </div>
       <div class="tip-content">
         <p>Open the reference fasta file and read it line by line. In a loop, ignore the first line and get the length of each following line. Don’t forget to remove the trailing newline character from each line. Sum up all the lengths you found.</p>
+        <p>You can also use the Python script <b>cal_seqlen.py</b> you created from the 4th question in <a href="https://python-bioinfo.bioshu.se/publish/Day_3_Exercise_2.html" target="_blank">Day 3, Exercise 2</a></p>
       </div>
     </div>
 
@@ -136,7 +137,11 @@
         <p><strong>Tip:</strong></p>
       </div>
       <div class="tip-content">
-        <p>You need to understand the structure of a GTF (gene transfer format) file for this project. Take your time and read up on the file format if you are not sure how to solve this task. To get the number of genes, open the GTF file and read it line by line. In a loop, count all features of type gene.</p>
+        <p>You need to understand the structure of a GTF (gene transfer format) file for this project. Take your time and read up on the file format if you are not sure how to solve this task. To get the number of genes, open the GTF file and read it line by line. In a loop, count all features of type <b>gene</b>.</p>
+        <p><b>feature</b> is the second column of a line, which is separated by tabs (<b>'\t'</b>)</p>
+        <p>To divide a string with items separated by tabs, using
+          <pre><code>entries = line.split('\t')</code></pre>
+        </p>
       </div>
     </div>
 
@@ -151,7 +156,7 @@
 
     <h2>Architect a Method</h2>
     <p>All following tasks are related to the CFTR gene.</p>
-    <p>In the annotation file (the GTF file), the CFTR gene has the id ENSG00000001626 on chromosome 7.</p>
+    <p>In the annotation file (the GTF file), the CFTR gene has the id <b>ENSG00000001626 </b> on the chromosome 7.</p>
     <ol>
         <li>How many transcripts can the CFTR gene generate?</li>
     </ol>
@@ -162,6 +167,40 @@
       </div>
       <div class="tip-content">
         <p>Again, think about the structure of the GTF file. Open the GTF file. In a loop, count all transcript features for the gene.</p>
+        <p>Loop over all lines, first check if the <b>feature</b> (3rd column of the line) is equal to <b>"transcript"</b>. Then check if the <b>gene_id</b> of the <b>attribute</b> field (the 9th column) is equal to <b>ENSG00000001626</b></p>
+        <p>The attribute field is separated by <b>';'</b>, and <b>gene_id</b> is located in the first element of the attribute field. <b>gene_id</b> can be extracted from the attribute field by 
+        <pre><code>
+li_attr = attribute.split(";")
+gene_id = li_attr[0].strip().split()[1].strip('"')
+        </code></pre></p>
+        <p>You can also use the following helper function to parse the attribute filed into a dictionary and that solution is more robust.
+        <pre><code>
+def parse_attribute(attribute):
+    """
+    Parse the attribute field from the GTF file
+    Input: string of the attribute field 
+    Output: a dictionary
+    """
+    li_attr = [x.strip() for x in attribute.split(';') if x.strip()]
+    d_attr = {}
+    for attr in li_attr:
+        key_and_value = attr.split(' ')
+        if (len(key_and_value) < 2):
+            print(key_and_value)
+        key = key_and_value[0]
+        value = key_and_value[1].strip().strip('"')
+        d_attr[key] = value
+    return d_attr
+
+# example usage 
+attribute = 'gene_id "ENSG00000001626"; gene_version "14"; transcript_id "ENST00000546407"; transcript_version "1"; gene_name "CFTR"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "CFTR-207"; transcript_source "havana"; transcript_biotype "processed_transcript"; transcript_support_level "1";'
+d_attr = parse_attribute(attribute)
+print(d_attr)
+gene_id = d_attr['gene_id']
+transcript_id = d_attr['transcript_id']
+         </code></pre>
+
+        </p>
       </div>
     </div>
 
@@ -183,7 +222,13 @@
         <p><strong>Tip:</strong></p>
       </div>
       <div class="tip-content">
-        <p>Open the GTF file. Fetch the start and stop positions for each transcript of the CFTR gene to calculate its length. Keep in mind that sequence numbering starts at 1 in the GTF file format.</p>
+        <p>Open the GTF file. Fetch the start (4th column) and stop (5th column) positions for each transcript of the CFTR gene to calculate its length. Keep in mind that sequence numbering starts at 1 in the GTF file format. Therefore, you need to subtract the start position from the stop position and add 1 to get the length of the transcript.
+          <pre><code>
+length = stop_position - start_position + 1
+          </code></pre>
+        </p>
+
+        </p>
       </div>
     </div>
 
@@ -207,6 +252,7 @@
       </div>
       <div class="tip-content">
         <p>Open the reference fasta file. In a loop, ignore the first line and append each line to a list, removing the trailing newline character. Outside the loop, use the join function to concatenate the lines from the list to get the reference sequence. Avoid concatenation inside the loop, as it is slow and wastes memory. Extract the start and stop positions of the longest transcript to fetch its DNA sequence from the reference sequence, but think about where the index starts from.</p>
+        <p>You can also use the function <b>readseq(seqfile)</b> from the 2nd question of <a href="https://python-bioinfo.bioshu.se/publish/Day_3_Exercise_2.html" target="_blank">Day 3, Exercise 2</a></p>
       </div>
     </div>
 
@@ -220,7 +266,7 @@
     </div>
 
     <ol start="4">
-        <li>Fetch the DNA sequences of all exons for that transcript, spliced together to one sequence.</li>
+        <li>Fetch the DNA sequences of all exons for that transcript, concatenate together to one sequence.</li>
     </ol>
 
     <div class="question">
@@ -229,6 +275,7 @@
       </div>
       <div class="tip-content">
         <p>First, you need to save the start and stop positions of all exons of the longest transcript. Then you can use a similar loop to the one you used in task 3 to extract the DNA sequence of each exon. Finally, you need to concatenate the DNA sequences of all exons.</p>
+        <p>An exon is recognized if the feature (3rd column of the line) is equal to <b>exon.</b></p>
       </div>
     </div>
 
