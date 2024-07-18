@@ -43,6 +43,12 @@
         <li>based on the reference amino-acid sequence determine whether any of the five given individuals is affected.</li>
     </ol>
 
+    <p>
+      <h2>The solution</h2>
+      <p>The solution to questions in this project can be found <a href="https://python-bioinfo.bioshu.se/publish/Solutions_project.html">here</a></p>
+
+      <p>There are various ways to write the code for this task. Here, we present one solution in the answers, but if you have written a different one, that's perfectly fine. Just ensure that you test your code to confirm that it performs as expected.</p>
+    </p>
     <h2>Required Material</h2>
     <p>The main task is divided into several steps. The first step is to download the <a href="assignment/data.zip">data.zip</a> which includes
     <table class="filetable">
@@ -176,7 +182,7 @@
         <p>The attribute field is separated by <b>';'</b>, and <b>gene_id</b> is located in the first element of the attribute field. <b>gene_id</b> can be extracted from the attribute field by 
         <pre><code>
 li_attr = attribute.split(";")
-gene_id = li_attr[0].strip().split()[1].strip('"')
+gene_id = li_attr[0].strip().split(' ', maxsplit=1)[1].strip('"')
         </code></pre></p>
         <p>You can also use the following helper function to parse the attribute filed into a dictionary and that solution is more robust.
         <pre><code>
