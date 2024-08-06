@@ -1,0 +1,11 @@
+
+##fileformat=VCFv4.2
+##source=ExampleVCF
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=CB,Number=1,Type=String,Description="Called by S(Sanger), M(UMich), B(BI)">
+#CHROM  POS       ID           REF ALT     QUAL   FILTER INFO     FORMAT         Sample1        Sample2
+1       10177     rs367896725  A   AC      50     PASS   .        GT:DP:CB       0/1:30:SM      0/0:28:SMB
+1       10352     rs555500075  T   TA      60     PASS   .        GT:DP:CB       1/1:35:SM      1/1:33:SMB
+
+
